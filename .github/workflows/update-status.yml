@@ -30,7 +30,7 @@ jobs:
             }
 
             const content = JSON.stringify(payload, null, 2);
-            const path = 'status.json';
+            const path = 'archivo.json';
             const owner = context.repo.owner;
             const repo = context.repo.repo;
 
@@ -39,11 +39,11 @@ jobs:
               const sha = response.data.sha;
               await github.rest.repos.createOrUpdateFileContents({
                 owner, repo, path,
-                message: 'Update status.json from repository_dispatch',
+                message: 'Update archivo.json from repository_dispatch',
                 content: Buffer.from(content).toString('base64'),
                 sha,
               });
-              core.info('status.json actualizado (commit).');
+              core.info('archivo.json actualizado (commit).');
             } catch (err) {
               if (err.status === 404) {
                 await github.rest.repos.createOrUpdateFileContents({
@@ -51,7 +51,7 @@ jobs:
                   message: 'Create status.json from repository_dispatch',
                   content: Buffer.from(content).toString('base64'),
                 });
-                core.info('status.json creado.');
+                core.info('archivo.json creado.');
               } else {
                 throw err;
               }
