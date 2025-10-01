@@ -1,8 +1,8 @@
-name: Update archivo.json
+name: Update status.json
 
 on:
   repository_dispatch:
-    types: [archivo]
+    types: [update-status]
 
 permissions:
   contents: write   # ⬅️ Necesario para poder hacer commit/push
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Write archivo.json using GitHub API (github-script)
+      - name: Write status.json using GitHub API (github-script)
         uses: actions/github-script@v6
         with:
           script: |
@@ -56,6 +56,3 @@ jobs:
                 throw err;
               }
             }
-
-
-
