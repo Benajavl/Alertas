@@ -29,7 +29,8 @@ body {
 }
 
 .container {
-    max-width: fit-content;
+    /* max-width: fit-content; */
+    
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
