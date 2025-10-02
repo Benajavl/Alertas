@@ -6,7 +6,7 @@ async function loadData() {
     try {
         // Agregar timestamp para evitar caché del navegador
         const timestamp = new Date().getTime();
-        const response = await fetch(`archivo.json?t=${timestamp}`);
+        const response = await fetch(`data.json?t=${timestamp}`);
         if (!response.ok) {
             throw new Error('No se pudo cargar el archivo archivo.json');
         }
