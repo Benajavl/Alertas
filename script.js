@@ -1,6 +1,5 @@
 let wellsData = null;
 let lastUpdateTime = null;
-let visibleWells = {}; // Almacenar qué pozos están visibles
 
 // Configuración de GitHub - REEMPLAZA ESTOS VALORES CON LOS TUYOS
 const GITHUB_CONFIG = {
@@ -194,52 +193,12 @@ function renderWells() {
     const container = document.getElementById('wellsContainer');
     container.innerHTML = '';
     
-    // Renderizar solo los pozos que tienen datos y están marcados como visibles
+    // Renderizar solo los pozos que tienen datos
     for (let i = 1; i <= 6; i++) {
-        if (hasWellData(i) && visibleWells[i]) {
+        if (hasWellData(i)) {
             container.innerHTML += renderWellCard(i);
         }
     }
-    
-    // Mostrar mensaje si no hay pozos visibles
-    if (container.innerHTML === '') {
-        container.innerHTML = '<p style="color: #7f8c8d; padding: 20px; text-align: center;">Selecciona al menos un pozo para visualizar</p>';
-    }
-}
-
-function renderWellsControls() {
-    const controlsContainer = document.getElementById('wellsControls');
-    controlsContainer.innerHTML = '';
-    
-    for (let i = 1; i <= 6; i++) {
-        if (hasWellData(i)) {
-            const headerData = wellsData.items[0];
-            const wellId = headerData[`FechaFracPozo${i}`] || `Pozo #${i}`;
-            const wellType = headerData[`TPNPozo${i}`] || '';
-            const letter = getWellLetter(i - 1);
-            
-            // Inicializar como visible si no existe
-            if (visibleWells[i] === undefined) {
-                visibleWells[i] = true;
-            }
-            
-            const checkboxDiv = document.createElement('div');
-            checkboxDiv.className = 'well-checkbox';
-            checkboxDiv.innerHTML = `
-                <input type="checkbox" id="well-${i}" ${visibleWells[i] ? 'checked' : ''} onchange="toggleWell(${i})">
-                <label for="well-${i}">
-                    <span class="well-checkbox-letter">${letter}</span>
-                    ${wellType} ${wellId}
-                </label>
-            `;
-            controlsContainer.appendChild(checkboxDiv);
-        }
-    }
-}
-
-function toggleWell(wellIndex) {
-    visibleWells[wellIndex] = !visibleWells[wellIndex];
-    renderWells();
 }
 
 function renderStock() {
