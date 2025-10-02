@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Pozos Petroleros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sistema de Gestión de Pozos</h1>
+            <p class="subtitle">Monitoreo y Control de Operaciones</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="update-info">
+            <p><strong>Última actualización:</strong> <span id="lastUpdate"></span></p>
+        </section>
+
+        <section class="wells-section">
+            <div class="wells-container" id="wellsContainer">
+                <!-- Las tablas se generarán dinámicamente aquí -->
+            </div>
+        </section>
+
+        <section class="stock-section">
+            <h2>Inventario de Stock</h2>
+            <div class="stock-grid" id="stockGrid">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistema de Gestión de Pozos. Todos los derechos reservados.</p>
+            <p>Datos actualizados en tiempo real</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
