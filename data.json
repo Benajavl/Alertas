@@ -1,8 +1,8 @@
 {
   "items": [
     {
-      "FechaFracPozo1": "Lca-3001(h)",
-      "FechaFracPozo2": "Lca-3002(h)",
+      "FechaFracPozo1": "Lca-3101(h)",
+      "FechaFracPozo2": "Lca-3102(h)",
       "FechaFracPozo3": "Lca-3003(h)",
       "FechaFracPozo4": "Lca-3004(h)",
       "FechaFracPozo5": "Lca-3005(h)",
@@ -1303,7 +1303,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-02T05:53:56.5265895Z",
+  "lastUpdate": "2025-10-02T05:54:32.0916527Z",
   "stock": [
     {
       "ITEM": "GAS OIL",
