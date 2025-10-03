@@ -391,7 +391,7 @@ function populateKpi(data) {
   let depthCount = 0;
   // Total de etapas realizadas (fecha de fractura presente)
   let totalStagesPerformed = 0;
-  // Agrupar etapas por día de fractura (solo fechas válidas)
+  // Agrupar etapas por día de fractura usando la fecha canónica fechaFracturaDate
   const stagesPerDay = {};
   data.wells.forEach(well => {
     well.etapas.forEach(etapa => {
@@ -400,28 +400,14 @@ function populateKpi(data) {
         totalDepth += etapa.profundidad;
         depthCount++;
       }
-      // Etapas realizadas: contar si hay fecha de fractura (texto o numérico)
-      if (etapa.fechaFractura && etapa.fechaFractura !== '') {
+      // Etapas realizadas: contar si hay fecha de fractura (texto no vacío OR fechaFracturaDate definido)
+      if ((etapa.fechaFractura && etapa.fechaFractura !== '') || etapa.fechaFracturaDate) {
         totalStagesPerformed++;
       }
-      // Agrupar por día si la fecha de fractura es numérica/valida
-      if (etapa.fechaFractura) {
-        // Intentar parsear como número para detectar serial de Excel
-        const num = parseFloat(etapa.fechaFractura);
-        let dateObj = null;
-        if (!isNaN(num)) {
-          dateObj = excelSerialToDate(num);
-        } else {
-          // Intentar parsear strings como fechas ISO
-          const parsed = Date.parse(etapa.fechaFractura);
-          if (!isNaN(parsed)) {
-            dateObj = new Date(parsed);
-          }
-        }
-        if (dateObj) {
-          const dayKey = dateObj.toLocaleDateString();
-          stagesPerDay[dayKey] = (stagesPerDay[dayKey] || 0) + 1;
-        }
+      // Si existe fechaFracturaDate válida, agrupar por día usando esa Date
+      if (etapa.fechaFracturaDate instanceof Date && !isNaN(etapa.fechaFracturaDate.getTime())) {
+        const dayKey = etapa.fechaFracturaDate.toLocaleDateString();
+        stagesPerDay[dayKey] = (stagesPerDay[dayKey] || 0) + 1;
       }
     });
   });
@@ -452,6 +438,8 @@ function populateKpi(data) {
     const yesterdayCount = stagesPerDay[yesterdayStr] || 0;
     kpis.push({ title: 'Etapas (hoy)', value: todayCount });
     kpis.push({ title: 'Etapas (ayer)', value: yesterdayCount });
+    // Log para depuración rápida: mostrar el mapa de etapas por día
+    try { console.debug('stagesPerDay', stagesPerDay, 'today', todayStr, todayCount, 'yesterday', yesterdayStr, yesterdayCount); } catch (e) {}
   } catch (e) {
     kpis.push({ title: 'Etapas (hoy)', value: 0 });
     kpis.push({ title: 'Etapas (ayer)', value: 0 });
@@ -1001,8 +989,25 @@ function disableAutoScroll() {
 function excelSerialToDate(serial) {
   const num = parseFloat(serial);
   if (isNaN(num)) return null;
-  const unixTimestamp = (num - 25569) * 86400 * 1000;
-  return new Date(unixTimestamp);
+  // Excel serials represent days since 1899-12-31 (with historical quirks).
+  // Creating a JS Date directly from a millisecond timestamp and then
+  // calling toLocaleDateString can shift the date by the local timezone
+  // offset (producing 'yesterday' in some timezones). To avoid this,
+  // construimos la fecha tomando los componentes UTC y luego creamos
+  // un objeto Date en horario local con esos componentes. De esta forma
+  // la fecha resultante refleja correctamente la fecha/hora del serial
+  // sin el efecto de desfase por zona horaria.
+  const ms = (num - 25569) * 86400 * 1000;
+  const utc = new Date(ms);
+  // Extraer componentes UTC
+  const year = utc.getUTCFullYear();
+  const month = utc.getUTCMonth();
+  const day = utc.getUTCDate();
+  const hours = utc.getUTCHours();
+  const minutes = utc.getUTCMinutes();
+  const seconds = utc.getUTCSeconds();
+  // Crear Date en horario local con los mismos componentes (evita el shift)
+  return new Date(year, month, day, hours, minutes, seconds);
 }
 
 /**
@@ -1115,21 +1120,41 @@ function parseWellsFromData(data) {
         profundidadVal = parseFloat(tpnVal);
       }
       // Convertir fecha de fractura (puede ser numérica o texto). Si es numérica,
-      // formatear como DD/MM/AAAA. Si es texto (p.ej. "FRACTURADO"), mantenerlo.
+      // formatear como DD/MM/AAAA y además almacenar un objeto Date canónico
+      // en `fechaFracDate` para permitir cálculos robustos independientemente
+      // del formato de visualización.
       let fechaFracStr = '';
+      let fechaFracDate = null;
       if (fracVal) {
-        if (!isNaN(parseFloat(fracVal))) {
-          const fracDate = excelSerialToDate(fracVal);
-          fechaFracStr = fracDate ? fracDate.toLocaleDateString('es-AR') : '';
+        const numFrac = parseFloat(fracVal);
+        if (!isNaN(numFrac)) {
+          const fracDate = excelSerialToDate(numFrac);
+          if (fracDate) {
+            fechaFracDate = fracDate;
+            fechaFracStr = fracDate.toLocaleDateString('es-AR');
+          } else {
+            fechaFracStr = '';
+          }
         } else {
-          fechaFracStr = fracVal;
+          // Intentar parsear cadenas tipo dd/mm/aaaa
+          const tryDt = parseDateTimeString(fracVal);
+          if (tryDt) {
+            fechaFracDate = tryDt;
+            fechaFracStr = tryDt.toLocaleDateString('es-AR');
+          } else {
+            // No es una fecha reconocible, mantener el valor tal cual (p.ej. 'FRACTURADO')
+            fechaFracStr = fracVal;
+            fechaFracDate = null;
+          }
         }
       }
       well.etapas.push({
         etapa: stageLabel,
         fechaHora: fechaHoraStr,
         profundidad: profundidadVal,
-        fechaFractura: fechaFracStr
+        fechaFractura: fechaFracStr,
+        // fechaFracturaDate es null si no existe o no es parseable
+        fechaFracturaDate: fechaFracDate
       });
     }
   }
