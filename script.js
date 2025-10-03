@@ -682,6 +682,16 @@ function renderTables(data) {
   // Hacer el contenedor focusable para permitir navegación por teclado en TVs
   wrapper.tabIndex = 0;
   wrapper.appendChild(container);
+  // Intentar enfocar el contenedor para recibir eventos de teclado en TVs
+  try {
+    // Solo forzar el foco si no hay otro elemento enfocado
+    if (document.activeElement === document.body || document.activeElement === null) {
+      // Pequeño retraso para asegurar que el elemento esté en el DOM
+      setTimeout(() => {
+        wrapper.focus();
+      }, 10);
+    }
+  } catch (e) {}
 
   // Añadir manejador de teclado para navegación horizontal en pantallas TV
   // Solo registrar una vez
@@ -690,8 +700,12 @@ function renderTables(data) {
       // Evitar interferir con inputs o elementos interactivos
       const active = document.activeElement;
       if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
-      const step = 120; // cantidad de px que avanza con cada pulsación (ajustable)
-      switch (ev.key) {
+      // Normalizar key y admitir keyCode antiguo
+      const key = ev.key || (ev.keyCode === 37 ? 'ArrowLeft' : ev.keyCode === 39 ? 'ArrowRight' : ev.keyCode === 38 ? 'ArrowUp' : ev.keyCode === 40 ? 'ArrowDown' : null);
+      const step = 120; // cantidad de px que avanza horizontalmente con cada pulsación (ajustable)
+      // Obtener el contenedor interior para scroll vertical
+      const innerEl = wrapper.querySelector('.table-wrapper-inner');
+      switch (key) {
         case 'ArrowRight':
           ev.preventDefault();
           wrapper.scrollLeft += step;
@@ -699,6 +713,22 @@ function renderTables(data) {
         case 'ArrowLeft':
           ev.preventDefault();
           wrapper.scrollLeft -= step;
+          break;
+        case 'ArrowDown':
+          // Scroll vertical dentro de la tabla
+          if (innerEl) {
+            ev.preventDefault();
+            // usar paso relativo a la altura visible
+            const vStep = Math.max(40, Math.round(innerEl.clientHeight * 0.12));
+            innerEl.scrollTop += vStep;
+          }
+          break;
+        case 'ArrowUp':
+          if (innerEl) {
+            ev.preventDefault();
+            const vStep = Math.max(40, Math.round(innerEl.clientHeight * 0.12));
+            innerEl.scrollTop -= vStep;
+          }
           break;
         case 'PageDown':
           ev.preventDefault();
@@ -739,8 +769,11 @@ function renderTables(data) {
       if (!wrapperEl) return;
       // Solo manejar si existe overflow horizontal
       if (wrapperEl.scrollWidth <= wrapperEl.clientWidth) return;
+      // Normalizar tecla (soporte keyCode antiguo)
+      const key = ev.key || (ev.keyCode === 37 ? 'ArrowLeft' : ev.keyCode === 39 ? 'ArrowRight' : ev.keyCode === 38 ? 'ArrowUp' : ev.keyCode === 40 ? 'ArrowDown' : null);
       const step = 120;
-      switch (ev.key) {
+      const inner = wrapperEl.querySelector('.table-wrapper-inner');
+      switch (key) {
         case 'ArrowRight':
           ev.preventDefault();
           wrapperEl.scrollLeft += step;
@@ -748,6 +781,20 @@ function renderTables(data) {
         case 'ArrowLeft':
           ev.preventDefault();
           wrapperEl.scrollLeft -= step;
+          break;
+        case 'ArrowDown':
+          if (inner) {
+            ev.preventDefault();
+            const vStep = Math.max(40, Math.round(inner.clientHeight * 0.12));
+            inner.scrollTop += vStep;
+          }
+          break;
+        case 'ArrowUp':
+          if (inner) {
+            ev.preventDefault();
+            const vStep = Math.max(40, Math.round(inner.clientHeight * 0.12));
+            inner.scrollTop -= vStep;
+          }
           break;
         case 'PageDown':
           ev.preventDefault();
