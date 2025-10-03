@@ -15,6 +15,12 @@ let hiddenStockItems = [];
 // Mapeará los datos de auto-scroll por tabla (interval y listener)
 const autoScrollData = new Map();
 
+// Colores por defecto para los pozos (para colorear cabeceras).
+// Orden: pozo 1..6. Amarillo, verde, azul, rojo, blanco y gris.
+const defaultWellColors = ['#ffd83a', '#7ad39a', '#74b3ff', '#ff7b7b', '#ffffff', '#cccccc'];
+// Array de colores que se pueden personalizar por el usuario; se cargan desde localStorage
+let wellColors = defaultWellColors.slice();
+
 /**
  * Obtiene el desplazamiento vertical deseado para mostrar la última fila
  * con datos (fecha/hora o profundidad) en la tabla contenida en el elemento
@@ -65,6 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
     hiddenStockItems = storedStockHidden ? JSON.parse(storedStockHidden) : [];
   } catch (e) {
     hiddenStockItems = [];
+  }
+
+  // Cargar colores de pozos desde localStorage o usar por defecto
+  try {
+    const storedColors = localStorage.getItem('wellColors');
+    if (storedColors) {
+      const parsed = JSON.parse(storedColors);
+      if (Array.isArray(parsed) && parsed.length >= defaultWellColors.length) {
+        wellColors = parsed.slice(0, defaultWellColors.length);
+      }
+    }
+  } catch (e) {
+    wellColors = defaultWellColors.slice();
   }
   // Configurar el toggle de tema oscuro/claro
   const themeToggle = document.getElementById('themeToggle');
@@ -159,6 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
       modalAutoScrollToggle.checked = false;
       autoScrollToggle.checked = false;
       disableAutoScroll();
+
+      // Restablecer colores de pozos a valores por defecto
+      wellColors = defaultWellColors.slice();
+      try { localStorage.setItem('wellColors', JSON.stringify(wellColors)); } catch (e) {}
+      applyWellColors();
+      // Actualizar controles de colores en el modal
+      renderColorControls(currentData || { wells: [] });
     });
   }
   if (saveBtn) {
@@ -175,6 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchData();
   // Revisar datos cada minuto para detectar cambios en el JSON
   setInterval(() => fetchData(true), 60000);
+
+  // Ajustar la altura de las tablas al tamaño de la ventana inicialmente y
+  // cuando la ventana cambie de tamaño
+  window.addEventListener('resize', adjustTableHeight);
 });
 
 /**
@@ -235,8 +265,13 @@ function updateDashboard(data) {
   renderStockControls(data);
   // Aplicar estado de ocultación de pozos (mantener ocultos los pozos que el usuario desactivó)
   applyHiddenWellState(data);
+  // Actualizar controles de colores y aplicar colores a las cabeceras
+  renderColorControls(data);
+  applyWellColors();
   // Posicionar las tablas al final para mostrar las últimas etapas si el auto-scroll no está activo
   scrollTablesToBottom();
+  // Ajustar la altura de las tablas al espacio disponible
+  adjustTableHeight();
   // Si el auto-scroll estaba activado, reiniciar intervalos para que
   // se apliquen a las nuevas tablas.
   const autoScrollToggle = document.getElementById('autoScrollToggle');
@@ -510,6 +545,8 @@ function renderTables(data) {
     th.colSpan = 3;
     th.textContent = well.name;
     th.setAttribute('data-well-name', well.name);
+    // Marcar índice del pozo para aplicar colores dinámicamente
+    th.setAttribute('data-well-index', index);
     headerRow1.appendChild(th);
   });
   thead.appendChild(headerRow1);
@@ -520,6 +557,8 @@ function renderTables(data) {
       const th = document.createElement('th');
       th.textContent = subName;
       th.setAttribute('data-well-name', well.name);
+      // Marcar índice para aplicar colores en subcabecera
+      th.setAttribute('data-well-index', index);
       headerRow2.appendChild(th);
     });
   });
@@ -579,6 +618,12 @@ function renderTables(data) {
   table.appendChild(tbody);
   inner.appendChild(table);
   container.appendChild(inner);
+  // Establecer un ancho mínimo para la tabla en función del número de columnas.
+  // Esto permite que, cuando hay muchos pozos, la tabla se extienda y aparezca
+  // una barra de desplazamiento horizontal en pantallas más pequeñas.
+  const totalColumns = 1 + data.wells.length * 3;
+  const baseWidth = 140; // ancho base en píxeles para cada columna
+  table.style.minWidth = (totalColumns * baseWidth) + 'px';
   // Calcular si existe al menos un valor (fecha/hora, profundidad numérica
   // o fecha de fractura con formato de fecha) en alguna etapa. Esto se
   // utiliza para evitar desplazar la tabla al final cuando no hay datos
@@ -882,6 +927,27 @@ function scrollTablesToBottom() {
 }
 
 /**
+ * Ajusta la altura máxima de las tablas para que ocupen el espacio
+ * disponible en la pantalla, especialmente en monitores de alta
+ * resolución. Calcula el espacio disponible restando la altura del
+ * encabezado, las tarjetas KPI y el pie (si está visible).
+ */
+function adjustTableHeight() {
+  const header = document.getElementById('header');
+  const kpis = document.getElementById('kpi-container');
+  const footer = document.getElementById('footer');
+  const headerH = header ? header.offsetHeight : 0;
+  const kpiH = kpis ? kpis.offsetHeight : 0;
+  const footerH = (footer && !footer.hidden) ? footer.offsetHeight : 0;
+  // Restar un margen adicional para evitar solapamiento
+  const margin = 40;
+  const available = Math.max(100, window.innerHeight - headerH - kpiH - footerH - margin);
+  document.querySelectorAll('.table-wrapper-inner').forEach(inner => {
+    inner.style.maxHeight = available + 'px';
+  });
+}
+
+/**
  * Aplica el estado de pozos ocultos guardado en localStorage. Esta función
  * se ejecuta después de renderizar las tablas y los controles del modal. Se
  * encarga de ocultar las tablas correspondientes a los pozos que el
@@ -917,5 +983,82 @@ function applyHiddenWellState(data) {
   document.querySelectorAll('#modalWellControls input[type="checkbox"]').forEach(cb => {
     const name = cb.dataset.wellName;
     cb.checked = !hiddenWellNames.includes(name);
+  });
+}
+
+/**
+ * Devuelve un color de texto adecuado (claro u oscuro) basado en la
+ * luminosidad del color de fondo. Usa la fórmula de luminosidad
+ * perceptual. Si el fondo es claro, devuelve un color oscuro, y viceversa.
+ * @param {string} hexColor Color en formato hexadecimal (p.ej. '#ff9900')
+ */
+function getContrastColor(hexColor) {
+  if (!hexColor || typeof hexColor !== 'string') return '#002';
+  const hex = hexColor.replace('#', '');
+  if (hex.length !== 6) return '#002';
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+  // Luminosidad perceptual
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness > 150 ? '#002' : '#fff';
+}
+
+/**
+ * Aplica los colores configurados a los encabezados de las tablas de pozos.
+ * Utiliza el array wellColors para asignar colores de fondo y texto.
+ */
+function applyWellColors() {
+  const topHeaders = document.querySelectorAll('#tables-wrapper thead tr:first-child th[data-well-index]');
+  const subHeaders = document.querySelectorAll('#tables-wrapper thead tr:nth-child(2) th[data-well-index]');
+  topHeaders.forEach(th => {
+    const idx = parseInt(th.getAttribute('data-well-index'), 10);
+    if (isNaN(idx)) return;
+    const color = wellColors[idx] || defaultWellColors[idx] || '#ccc';
+    th.style.backgroundColor = color;
+    th.style.color = getContrastColor(color);
+  });
+  subHeaders.forEach(th => {
+    const idx = parseInt(th.getAttribute('data-well-index'), 10);
+    if (isNaN(idx)) return;
+    const color = wellColors[idx] || defaultWellColors[idx] || '#ccc';
+    // Usar el mismo color o un tono más claro para las subcabeceras
+    th.style.backgroundColor = color;
+    th.style.color = getContrastColor(color);
+  });
+}
+
+/**
+ * Genera controles de selección de colores en el modal de ajustes para
+ * permitir al usuario personalizar los colores de los encabezados de los
+ * pozos. Al cambiar un color, se actualiza wellColors y se guardan
+ * en localStorage.
+ * @param {object} data Datos estructurados con wells.
+ */
+function renderColorControls(data) {
+  const container = document.getElementById('modalColorControls');
+  if (!container) return;
+  container.innerHTML = '';
+  if (!data || !Array.isArray(data.wells)) return;
+  data.wells.forEach((well, idx) => {
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.gap = '0.5rem';
+    wrapper.style.marginBottom = '0.25rem';
+    const label = document.createElement('span');
+    label.textContent = well.name;
+    label.style.flex = '1';
+    const input = document.createElement('input');
+    input.type = 'color';
+    input.value = wellColors[idx] || defaultWellColors[idx];
+    input.addEventListener('input', () => {
+      wellColors[idx] = input.value;
+      try { localStorage.setItem('wellColors', JSON.stringify(wellColors)); } catch (e) {}
+      applyWellColors();
+    });
+    wrapper.appendChild(label);
+    wrapper.appendChild(input);
+    container.appendChild(wrapper);
   });
 }
