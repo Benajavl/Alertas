@@ -411,7 +411,7 @@ body {
   /* Proveer espacio inferior para que al hacer scroll al final
      no se visualicen filas vacías como contenido. Esto añade un
      margen interno debajo de la última fila con datos. */
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 table {
@@ -420,7 +420,7 @@ table {
   /* Aumentar tamaño de fuente para mejor visibilidad en pantallas grandes
      como televisores. 1rem es equivalente al tamaño base del cuerpo y
      proporciona un texto más legible que el 0.8rem anterior. */
-  font-size: 1rem;
+  font-size: 1.5rem;
   white-space: nowrap;
 }
 
@@ -433,7 +433,7 @@ table {
 .time-part {
   /* Incrementar ligeramente el tamaño de fuente de la hora para mantener
      la legibilidad en pantallas grandes. */
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   color: var(--text-color);
   display: block;
 }
@@ -460,7 +460,7 @@ thead tr:first-child th {
 }
 thead tr:nth-child(2) th {
   /* Altura aproximada de la primera fila de encabezado */
-  top: 1.8rem;
+  top: 3rem;
 }
 
 tr:nth-child(even) {
