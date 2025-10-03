@@ -82,6 +82,27 @@ function normalizeKey(ev) {
   return raw || code || String(kc);
 }
 
+/** Devuelve el elemento que debe recibir scroll horizontal (el que tiene overflow)
+ * Busca `#tables-wrapper` primero y luego otros candidatos. Retorna null si no lo encuentra.
+ */
+function findHorizontalScroller() {
+  try {
+    const wrapper = document.getElementById('tables-wrapper');
+    if (wrapper && wrapper.scrollWidth > wrapper.clientWidth) return wrapper;
+    // Buscar contenedores internos que puedan tener overflow
+    const candidates = Array.from(document.querySelectorAll('.table-container, .table-wrapper-inner, table'));
+    for (let el of candidates) {
+      if (!el) continue;
+      if (el.scrollWidth > el.clientWidth) return el;
+      const style = window.getComputedStyle(el);
+      if (style && (style.overflowX === 'auto' || style.overflowX === 'scroll')) return el;
+    }
+    return wrapper || null;
+  } catch (e) {
+    return null;
+  }
+}
+
 /**
  * Al cargar el contenido del documento, configuramos los eventos
  * iniciales y solicitamos los datos.
@@ -768,16 +789,18 @@ function renderTables(data) {
       const dbg = document.getElementById('tv-key-debug');
       if (dbg) dbg.textContent = `key:${ev.key || ''} code:${ev.code || ''} keyCode:${ev.keyCode||ev.which||0} -> ${key}`;
       const step = 120; // cantidad de px que avanza horizontalmente con cada pulsación (ajustable)
+      // Determinar el elemento que contiene overflow horizontal real
+      const scroller = findHorizontalScroller() || wrapper;
       // Obtener el contenedor interior para scroll vertical
-      const innerEl = wrapper.querySelector('.table-wrapper-inner');
+      const innerEl = (scroller && scroller.querySelector) ? scroller.querySelector('.table-wrapper-inner') : wrapper.querySelector('.table-wrapper-inner');
       switch (key) {
         case 'ArrowRight':
           ev.preventDefault();
-          wrapper.scrollLeft += step;
+          scroller.scrollLeft += step;
           break;
         case 'ArrowLeft':
           ev.preventDefault();
-          wrapper.scrollLeft -= step;
+          scroller.scrollLeft -= step;
           break;
         case 'ArrowDown':
           // Scroll vertical dentro de la tabla
@@ -840,15 +863,16 @@ function renderTables(data) {
       const dbgAll = document.getElementById('tv-key-debug');
       if (dbgAll) dbgAll.textContent = `key:${ev.key||''} code:${ev.code||''} keyCode:${ev.keyCode||ev.which||0} -> ${key}`;
       const step = 120;
-      const inner = wrapperEl.querySelector('.table-wrapper-inner');
+      const scroller = findHorizontalScroller() || wrapperEl;
+      const inner = (scroller && scroller.querySelector) ? scroller.querySelector('.table-wrapper-inner') : wrapperEl.querySelector('.table-wrapper-inner');
       switch (key) {
         case 'ArrowRight':
           ev.preventDefault();
-          wrapperEl.scrollLeft += step;
+          scroller.scrollLeft += step;
           break;
         case 'ArrowLeft':
           ev.preventDefault();
-          wrapperEl.scrollLeft -= step;
+          scroller.scrollLeft -= step;
           break;
         case 'ArrowDown':
           if (inner) {
@@ -866,19 +890,19 @@ function renderTables(data) {
           break;
         case 'PageDown':
           ev.preventDefault();
-          wrapperEl.scrollLeft += wrapperEl.clientWidth - 60;
+          scroller.scrollLeft += (scroller.clientWidth || wrapperEl.clientWidth) - 60;
           break;
         case 'PageUp':
           ev.preventDefault();
-          wrapperEl.scrollLeft -= wrapperEl.clientWidth - 60;
+          scroller.scrollLeft -= (scroller.clientWidth || wrapperEl.clientWidth) - 60;
           break;
         case 'Home':
           ev.preventDefault();
-          wrapperEl.scrollLeft = 0;
+          scroller.scrollLeft = 0;
           break;
         case 'End':
           ev.preventDefault();
-          wrapperEl.scrollLeft = wrapperEl.scrollWidth;
+          scroller.scrollLeft = scroller.scrollWidth || wrapperEl.scrollWidth;
           break;
         default:
           break;
