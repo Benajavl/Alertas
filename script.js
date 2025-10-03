@@ -526,24 +526,6 @@ function renderTables(data) {
     });
     tbody.appendChild(tr);
   }
-  // Añadir dos filas en blanco al final para dejar espacio y mejorar la visibilidad
-  for (let extra = 0; extra < 2; extra++) {
-    const trBlank = document.createElement('tr');
-    // Celda vacía para la columna de etapa
-    const blankEtapa = document.createElement('td');
-    blankEtapa.textContent = '';
-    trBlank.appendChild(blankEtapa);
-    data.wells.forEach(well => {
-      // Añadir tres celdas vacías por pozo
-      for (let c = 0; c < 3; c++) {
-        const tdBlank = document.createElement('td');
-        tdBlank.textContent = '';
-        tdBlank.setAttribute('data-well-name', well.name);
-        trBlank.appendChild(tdBlank);
-      }
-    });
-    tbody.appendChild(trBlank);
-  }
   table.appendChild(tbody);
   inner.appendChild(table);
   container.appendChild(inner);
