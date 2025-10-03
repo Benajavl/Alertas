@@ -463,9 +463,8 @@ function renderTables(data) {
   // Contenedor interior para auto-scroll vertical
   const inner = document.createElement('div');
   inner.className = 'table-wrapper-inner';
-  // Indicar si esta tabla tiene filas de datos. Se usará para evitar
-  // desplazarse al final cuando no haya datos.
-  inner.dataset.hasData = String(maxRows > 0);
+  // La indicación de si existen datos significativos se establecerá
+  // después de crear las filas, mediante hasAnyValue.
   const table = document.createElement('table');
   const thead = document.createElement('thead');
   // Primera fila de cabecera: encabezado vacío para etapa y encabezados de pozos (colspan)
@@ -548,6 +547,30 @@ function renderTables(data) {
   table.appendChild(tbody);
   inner.appendChild(table);
   container.appendChild(inner);
+  // Calcular si existe al menos un valor (fecha/hora, profundidad numérica
+  // o fecha de fractura con formato de fecha) en alguna etapa. Esto se
+  // utiliza para evitar desplazar la tabla al final cuando no hay datos
+  // significativos.
+  let hasAnyValue = false;
+  data.wells.forEach(well => {
+    for (let idx = 0; idx < well.etapas.length; idx++) {
+      const etapaObj = well.etapas[idx];
+      if (!etapaObj) continue;
+      if (etapaObj.fechaHora && etapaObj.fechaHora.trim() !== '') {
+        hasAnyValue = true;
+        return;
+      }
+      if (typeof etapaObj.profundidad === 'number') {
+        hasAnyValue = true;
+        return;
+      }
+      if (etapaObj.fechaFractura && etapaObj.fechaFractura.includes('/')) {
+        hasAnyValue = true;
+        return;
+      }
+    }
+  });
+  inner.dataset.hasData = String(hasAnyValue);
   // Vaciar contenedor y añadir la tabla unificada
   wrapper.innerHTML = '';
   wrapper.appendChild(container);
