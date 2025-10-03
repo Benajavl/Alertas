@@ -1303,7 +1303,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-03T01:58:45.8395278Z",
+  "lastUpdate": "2025-10-03T02:25:44.0264094Z",
   "stock": [
     {
       "ITEM": "GAS OIL",
@@ -1319,11 +1319,11 @@
     },
     {
       "ITEM": "GEL BOLSONES",
-      "STOCK": "10"
+      "STOCK": "20"
     },
     {
       "ITEM": "GEL TOTE",
-      "STOCK": "10"
+      "STOCK": "20"
     }
   ]
 }
