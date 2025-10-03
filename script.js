@@ -783,11 +783,34 @@ function parseWellsFromData(data) {
 function scrollTablesToBottom() {
   const inners = document.querySelectorAll('.table-container .table-wrapper-inner');
   inners.forEach(inner => {
-    // Solo desplazarse al final si la tabla tiene filas con datos
+    // Solo desplazarse si la tabla contiene datos significativos
     if (inner.dataset.hasData === 'true') {
-      const maxScroll = inner.scrollHeight - inner.clientHeight;
-      if (maxScroll > 0) {
-        inner.scrollTop = maxScroll;
+      const table = inner.querySelector('table');
+      if (!table) return;
+      const rows = table.querySelectorAll('tbody tr');
+      let targetRow = null;
+      // Encontrar la última fila que tenga algún valor en columnas de fecha/hora o profundidad
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        // Comenzar desde la segunda celda (índice 1) porque índice 0 es la etapa
+        for (let i = 1; i < cells.length; i++) {
+          // Ignorar las columnas de fecha de fractura (que son la tercera columna de cada pozo)
+          // Para ello, las celdas con índice %3 == 0 son las de fractura
+          const mod = i % 3;
+          if (mod === 1 || mod === 2) { // columna F/h o Profundidad
+            if (cells[i].textContent && cells[i].textContent.trim() !== '') {
+              targetRow = row;
+            }
+          }
+        }
+      });
+      if (targetRow) {
+        // Calcular el desplazamiento para llevar la fila al borde inferior del contenedor
+        const rowTop = targetRow.offsetTop;
+        const rowHeight = targetRow.offsetHeight;
+        const desired = rowTop + rowHeight - inner.clientHeight;
+        const targetScroll = Math.max(0, desired);
+        inner.scrollTop = targetScroll;
       }
     }
   });
