@@ -36,18 +36,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Configurar el toggle de tema oscuro/claro
   const themeToggle = document.getElementById('themeToggle');
-  // Forzar modo oscuro por defecto en cada carga
-  document.body.classList.add('dark');
-  themeToggle.checked = true;
+  // Determinar tema preferido almacenado; si no existe, usar oscuro por defecto
+  let storedTheme;
   try {
-    localStorage.setItem('theme', 'dark');
-  } catch (e) {}
+    storedTheme = localStorage.getItem('theme');
+  } catch (e) {
+    storedTheme = null;
+  }
+  if (storedTheme === 'light') {
+    // Aplicar tema claro guardado
+    document.body.classList.remove('dark');
+    themeToggle.checked = false;
+  } else {
+    // Usar tema oscuro por defecto
+    document.body.classList.add('dark');
+    themeToggle.checked = true;
+    // Guardar la preferencia solo si no existe
+    if (!storedTheme) {
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    }
+  }
   // Permitir cambiar entre modo oscuro y claro; actualizar localStorage
   themeToggle.addEventListener('change', () => {
     if (themeToggle.checked) {
+      // Activar modo oscuro
       document.body.classList.add('dark');
       try { localStorage.setItem('theme', 'dark'); } catch (e) {}
     } else {
+      // Activar modo claro: simplemente quitar la clase dark
       document.body.classList.remove('dark');
       try { localStorage.setItem('theme', 'light'); } catch (e) {}
     }
@@ -447,6 +463,9 @@ function renderTables(data) {
   // Contenedor interior para auto-scroll vertical
   const inner = document.createElement('div');
   inner.className = 'table-wrapper-inner';
+  // Indicar si esta tabla tiene filas de datos. Se usará para evitar
+  // desplazarse al final cuando no haya datos.
+  inner.dataset.hasData = String(maxRows > 0);
   const table = document.createElement('table');
   const thead = document.createElement('thead');
   // Primera fila de cabecera: encabezado vacío para etapa y encabezados de pozos (colspan)
@@ -599,6 +618,8 @@ function enableAutoScroll() {
   containers.forEach(container => {
     const inner = container.querySelector('.table-wrapper-inner');
     if (!inner) return;
+    // No aplicar auto-scroll si la tabla no tiene datos (no hay etapas)
+    if (inner.dataset.hasData !== 'true') return;
     // Inicializar marca de tiempo del último scroll del usuario
     inner.dataset.lastUserScroll = '0';
     const scrollListener = () => {
@@ -739,9 +760,12 @@ function parseWellsFromData(data) {
 function scrollTablesToBottom() {
   const inners = document.querySelectorAll('.table-container .table-wrapper-inner');
   inners.forEach(inner => {
-    const maxScroll = inner.scrollHeight - inner.clientHeight;
-    if (maxScroll > 0) {
-      inner.scrollTop = maxScroll;
+    // Solo desplazarse al final si la tabla tiene filas con datos
+    if (inner.dataset.hasData === 'true') {
+      const maxScroll = inner.scrollHeight - inner.clientHeight;
+      if (maxScroll > 0) {
+        inner.scrollTop = maxScroll;
+      }
     }
   });
 }
