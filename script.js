@@ -58,6 +58,12 @@ function getLastDataScroll(inner) {
  * iniciales y solicitamos los datos.
  */
 document.addEventListener('DOMContentLoaded', () => {
+  // Detectar si estamos en una TV (mejor compatibilidad con mandos/firmwares)
+  try {
+    var _UA = navigator.userAgent || '';
+    var _IS_TV = /\b(Android TV|SMART-TV|HBBTV|BRAVIA|AFT|MiBOX|TCL)\b/i.test(_UA) || /com\.tcl\.browser/i.test(_UA);
+    if (_IS_TV) document.documentElement.classList.add('is-tv');
+  } catch (e) {}
   // Cargar la lista de pozos ocultos desde localStorage
   try {
     const storedHidden = localStorage.getItem('hiddenWellNames');
@@ -288,8 +294,6 @@ function updateDashboard(data) {
   // Actualizar controles de colores y aplicar colores a las cabeceras
   renderColorControls(data);
   applyWellColors();
-  // Posicionar las tablas al final para mostrar las últimas etapas si el auto-scroll no está activo
-  scrollTablesToBottom();
   // Ajustar la altura de las tablas al espacio disponible
   adjustTableHeight();
   // Si el auto-scroll estaba activado, reiniciar intervalos para que
@@ -304,6 +308,14 @@ function updateDashboard(data) {
       if (autoScrollToggle) autoScrollToggle.checked = true;
     }
   } catch (e) {}
+  // Posicionar las tablas según estado de auto-scroll:
+  // - Si el auto-scroll está activo, usar la estrategia "TV-friendly" (scrollToLastWithData)
+  // - Si no, realizar un scroll inmediato al final
+  if (autoScrollToggle && autoScrollToggle.checked) {
+    scrollToLastWithData(7);
+  } else {
+    scrollTablesToBottom();
+  }
   if (autoScrollToggle && autoScrollToggle.checked) {
     enableAutoScroll();
   } else {
@@ -1090,6 +1102,55 @@ function scrollTablesToBottom() {
       }
     }
   });
+}
+
+/**
+ * Desplaza la tabla a la última fila que contiene datos, mostrando las últimas N filas.
+ * Implementación basada en la página que funciona en TV: usa scrollTo con behavior:'smooth'
+ * y calcula el target a partir del offsetTop de la fila objetivo teniendo en cuenta
+ * la altura de los headers.
+ * @param {number} n cantidad de últimas filas con datos a mostrar
+ */
+function scrollToLastWithData(n) {
+  if (typeof n !== 'number') n = 7;
+  // Solo actuamos si existe el contenedor principal
+  const tableContainer = document.getElementById('tables-wrapper') || document.getElementById('tables-wrapper');
+  // Fallback al contenedor existente en este proyecto
+  const localContainer = document.getElementById('tables-wrapper') || document.getElementById('tables-wrapper');
+  // En nuestro diseño la zona scrollable vertical está dentro de .table-wrapper-inner
+  const inner = document.querySelector('.table-container .table-wrapper-inner');
+  if (!inner) return;
+
+  // Calcular filas con datos usando latestData (compatible con estructura actual)
+  const rows = Array.from(inner.querySelectorAll('tbody tr'));
+  // Si no hay filas, nada que hacer
+  if (!rows.length) return;
+
+  // Construir índice de filas que tienen datos (mirando celdas con data-well-name no vacías)
+  const visibleSet = new Set(); // no necesita pozos filtrados aquí
+  const idx = [];
+  rows.forEach(function(tr, i){
+    // Detectar si la fila tiene alguna celda con texto no vacío
+    const cells = tr.querySelectorAll('td');
+    let has = false;
+    for (let c = 0; c < cells.length; c++){
+      const txt = cells[c].textContent || '';
+      if (txt.trim() !== '') { has = true; break; }
+    }
+    if (has) idx.push(i);
+  });
+  if (!idx.length) return;
+  const targetIndex = Math.max(0, idx.length - n);
+  const row = rows[idx[targetIndex]];
+  if (!row) return;
+  // Altura de headers si existen (buscar elementos thead sticky)
+  const thead1 = document.querySelector('thead tr:first-child');
+  const thead2 = document.querySelector('thead tr:nth-child(2)');
+  const headerH = ((thead1?thead1.offsetHeight:0) + (thead2?thead2.offsetHeight:0));
+  const targetTop = Math.max(0, row.offsetTop - headerH - 8);
+  // Smooth scroll del contenedor principal vertical
+  const parent = document.querySelector('.table-container .table-wrapper-inner');
+  if (parent) parent.scrollTo({ top: targetTop, behavior: 'smooth' });
 }
 
 /**
