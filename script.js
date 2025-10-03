@@ -437,31 +437,25 @@ function populateKpi(data) {
     avgStagesPerDay = 'N/A';
   }
 
-  // Calcular etapas realizadas el día anterior (ayer).
-  // Se toma la fecha local actual, se resta un día y se cuenta cuántas
-  // etapas tienen una fecha de fractura que coincide con ese día.
-  let prevDayStages = 0;
-  try {
-    const now = new Date();
-    // Restar un día
-    const prev = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
-    const prevDayStr = prev.toLocaleDateString();
-    data.wells.forEach(well => {
-      well.etapas.forEach(etapa => {
-        if (etapa.fechaFractura && etapa.fechaFractura === prevDayStr) {
-          prevDayStages++;
-        }
-      });
-    });
-  } catch (e) {
-    prevDayStages = 0;
-  }
   // Construir lista de KPIs
   const kpis = [];
   kpis.push({ title: 'Pozos', value: wellsCount });
   kpis.push({ title: 'Etapas totales', value: totalStagesPerformed });
   kpis.push({ title: 'Etapas promedio/día', value: avgStagesPerDay });
-  kpis.push({ title: 'Etapas día anterior', value: prevDayStages });
+  // Calcular etapas de hoy y de ayer usando el mapa stagesPerDay
+  try {
+    const now = new Date();
+    const todayStr = now.toLocaleDateString();
+    const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+    const yesterdayStr = yesterday.toLocaleDateString();
+    const todayCount = stagesPerDay[todayStr] || 0;
+    const yesterdayCount = stagesPerDay[yesterdayStr] || 0;
+    kpis.push({ title: 'Etapas (hoy)', value: todayCount });
+    kpis.push({ title: 'Etapas (ayer)', value: yesterdayCount });
+  } catch (e) {
+    kpis.push({ title: 'Etapas (hoy)', value: 0 });
+    kpis.push({ title: 'Etapas (ayer)', value: 0 });
+  }
   // No se añade profundidad promedio según los requisitos
   // Construir las tarjetas
   kpis.forEach(kpi => {
