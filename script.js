@@ -282,27 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // cuando la ventana cambie de tamaño
   window.addEventListener('resize', adjustTableHeight);
 
-  // Añadir overlay pequeño para depuración de teclas en TV
-  try {
-    if (!document.getElementById('tv-key-debug')) {
-      const dbg = document.createElement('div');
-      dbg.id = 'tv-key-debug';
-      dbg.style.position = 'fixed';
-      dbg.style.top = '8px';
-      dbg.style.right = '8px';
-      dbg.style.zIndex = 9999;
-      dbg.style.padding = '6px 8px';
-      dbg.style.background = 'rgba(0,0,0,0.6)';
-      dbg.style.color = '#fff';
-      dbg.style.fontSize = '12px';
-      dbg.style.borderRadius = '4px';
-      dbg.style.maxWidth = '50%';
-      dbg.style.overflow = 'hidden';
-      dbg.style.textOverflow = 'ellipsis';
-      dbg.textContent = 'tv-key-debug ready';
-      document.body.appendChild(dbg);
-    }
-  } catch (e) {}
+  // overlay de depuración eliminado (se quitó tras la verificación en TV)
 });
 
 /**
@@ -785,9 +765,7 @@ function renderTables(data) {
       const active = document.activeElement;
       if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
       const key = normalizeKey(ev);
-      // Mostrar overlay de depuración si existe
-      const dbg = document.getElementById('tv-key-debug');
-      if (dbg) dbg.textContent = `key:${ev.key || ''} code:${ev.code || ''} keyCode:${ev.keyCode||ev.which||0} -> ${key}`;
+  // (debug overlay removido)
       const step = 120; // cantidad de px que avanza horizontalmente con cada pulsación (ajustable)
       // Determinar el elemento que contiene overflow horizontal real
       const scroller = findHorizontalScroller() || wrapper;
@@ -859,9 +837,7 @@ function renderTables(data) {
       if (wrapperEl.scrollWidth <= wrapperEl.clientWidth) return;
       // Normalizar tecla (soporte keyCode antiguo)
       const key = normalizeKey(ev);
-      // Mostrar overlay de depuración si existe
-      const dbgAll = document.getElementById('tv-key-debug');
-      if (dbgAll) dbgAll.textContent = `key:${ev.key||''} code:${ev.code||''} keyCode:${ev.keyCode||ev.which||0} -> ${key}`;
+  // (debug overlay removido)
       const step = 120;
       const scroller = findHorizontalScroller() || wrapperEl;
       const inner = (scroller && scroller.querySelector) ? scroller.querySelector('.table-wrapper-inner') : wrapperEl.querySelector('.table-wrapper-inner');
