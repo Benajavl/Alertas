@@ -408,6 +408,10 @@ body {
   max-height: 300px; /* Altura limitada para poder auto-scroll */
   border: 1px solid var(--table-header-bg);
   border-radius: var(--border-radius);
+  /* Proveer espacio inferior para que al hacer scroll al final
+     no se visualicen filas vacías como contenido. Esto añade un
+     margen interno debajo de la última fila con datos. */
+  padding-bottom: 2rem;
 }
 
 table {
