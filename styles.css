@@ -374,6 +374,17 @@ body {
   padding-bottom: 1rem;
 }
 
+/* Permitir desplazamiento suave y foco visible para navegación con mando/teclado (TV) */
+#tables-wrapper:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+#tables-wrapper {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Estilo para mensajes de error */
 .error {
   background-color: #f8d7da;
