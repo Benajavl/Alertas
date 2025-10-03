@@ -53,6 +53,35 @@ function getLastDataScroll(inner) {
   return 0;
 }
 
+/** Normaliza distintos valores que pueden enviar mandos/TVs para representar
+ * flechas y teclas de navegación. Devuelve uno de: 'ArrowLeft','ArrowRight',
+ * 'ArrowUp','ArrowDown','PageUp','PageDown','Home','End' o el valor original
+ * de ev.key si no se reconoce.
+ */
+function normalizeKey(ev) {
+  const raw = (ev.key || '').toString();
+  const code = (ev.code || '').toString();
+  const kc = ev.keyCode || ev.which || 0;
+  // Mapeo directo de variantes conocidas
+  const map = {
+    'Left': 'ArrowLeft', 'Right': 'ArrowRight', 'Up': 'ArrowUp', 'Down': 'ArrowDown',
+    'ArrowLeft': 'ArrowLeft', 'ArrowRight': 'ArrowRight', 'ArrowUp': 'ArrowUp', 'ArrowDown': 'ArrowDown',
+    'PageUp': 'PageUp', 'PageDown': 'PageDown', 'Home': 'Home', 'End': 'End'
+  };
+  if (map[raw]) return map[raw];
+  if (map[code]) return map[code];
+  // keyCode fallbacks
+  if (kc === 37) return 'ArrowLeft';
+  if (kc === 39) return 'ArrowRight';
+  if (kc === 38) return 'ArrowUp';
+  if (kc === 40) return 'ArrowDown';
+  if (kc === 33) return 'PageUp';
+  if (kc === 34) return 'PageDown';
+  if (kc === 36) return 'Home';
+  if (kc === 35) return 'End';
+  return raw || code || String(kc);
+}
+
 /**
  * Al cargar el contenido del documento, configuramos los eventos
  * iniciales y solicitamos los datos.
@@ -231,6 +260,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // Ajustar la altura de las tablas al tamaño de la ventana inicialmente y
   // cuando la ventana cambie de tamaño
   window.addEventListener('resize', adjustTableHeight);
+
+  // Añadir overlay pequeño para depuración de teclas en TV
+  try {
+    if (!document.getElementById('tv-key-debug')) {
+      const dbg = document.createElement('div');
+      dbg.id = 'tv-key-debug';
+      dbg.style.position = 'fixed';
+      dbg.style.top = '8px';
+      dbg.style.right = '8px';
+      dbg.style.zIndex = 9999;
+      dbg.style.padding = '6px 8px';
+      dbg.style.background = 'rgba(0,0,0,0.6)';
+      dbg.style.color = '#fff';
+      dbg.style.fontSize = '12px';
+      dbg.style.borderRadius = '4px';
+      dbg.style.maxWidth = '50%';
+      dbg.style.overflow = 'hidden';
+      dbg.style.textOverflow = 'ellipsis';
+      dbg.textContent = 'tv-key-debug ready';
+      document.body.appendChild(dbg);
+    }
+  } catch (e) {}
 });
 
 /**
@@ -712,8 +763,10 @@ function renderTables(data) {
       // Evitar interferir con inputs o elementos interactivos
       const active = document.activeElement;
       if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
-      // Normalizar key y admitir keyCode antiguo
-      const key = ev.key || (ev.keyCode === 37 ? 'ArrowLeft' : ev.keyCode === 39 ? 'ArrowRight' : ev.keyCode === 38 ? 'ArrowUp' : ev.keyCode === 40 ? 'ArrowDown' : null);
+      const key = normalizeKey(ev);
+      // Mostrar overlay de depuración si existe
+      const dbg = document.getElementById('tv-key-debug');
+      if (dbg) dbg.textContent = `key:${ev.key || ''} code:${ev.code || ''} keyCode:${ev.keyCode||ev.which||0} -> ${key}`;
       const step = 120; // cantidad de px que avanza horizontalmente con cada pulsación (ajustable)
       // Obtener el contenedor interior para scroll vertical
       const innerEl = wrapper.querySelector('.table-wrapper-inner');
@@ -782,7 +835,10 @@ function renderTables(data) {
       // Solo manejar si existe overflow horizontal
       if (wrapperEl.scrollWidth <= wrapperEl.clientWidth) return;
       // Normalizar tecla (soporte keyCode antiguo)
-      const key = ev.key || (ev.keyCode === 37 ? 'ArrowLeft' : ev.keyCode === 39 ? 'ArrowRight' : ev.keyCode === 38 ? 'ArrowUp' : ev.keyCode === 40 ? 'ArrowDown' : null);
+      const key = normalizeKey(ev);
+      // Mostrar overlay de depuración si existe
+      const dbgAll = document.getElementById('tv-key-debug');
+      if (dbgAll) dbgAll.textContent = `key:${ev.key||''} code:${ev.code||''} keyCode:${ev.keyCode||ev.which||0} -> ${key}`;
       const step = 120;
       const inner = wrapperEl.querySelector('.table-wrapper-inner');
       switch (key) {
