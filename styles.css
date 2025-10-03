@@ -1,328 +1,512 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*
+ * Estilos básicos y configuración de colores para modo claro y oscuro.
+ * Utilizamos variables CSS para facilitar el cambio de temas sin frameworks.
+ */
+
+/* Variables de tema por defecto (modo claro) */
+:root {
+  /* Paleta suave para modo claro */
+  --bg-color: #fafafa;
+  --text-color: #222831;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --accent-color: #3a5ba0;
+  --accent-color-light: #e8eef8;
+  --border-radius: 0.5rem;
+  --table-header-bg: #f3f6fa;
+  --table-row-hover-bg: #f0f4f8;
+  --table-border-color: #d0d7e5;
 }
 
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --success-color: #27ae60;
-    --background-color: #0a0a0a;
-    --card-background: #1a1a1a;
-    --text-color: #ffffff;
-    --border-color: #333;
-    --yellow-header: #f4d03f;
-    --cyan-text: #00d4ff;
-    --orange-text: #ff8c00;
+/* Variables para el modo oscuro */
+body.dark {
+  /* Paleta suave para modo oscuro */
+  --bg-color: #1a1c1f;
+  --text-color: #e5e7eb;
+  --card-bg: #24262b;
+  --card-shadow: rgba(0, 0, 0, 0.6);
+  --accent-color: #5c7dc0;
+  --accent-color-light: #2a3150;
+  --table-header-bg: #2c2f36;
+  --table-row-hover-bg: #313640;
+  --table-border-color: #3c4350;
+}
+
+/* Estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.container {
-    /* max-width: fit-content; */
-    
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
+/* Encabezado */
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0.5rem 1rem;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 4px var(--card-shadow);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  gap: 0.5rem;
 }
 
-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 30px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+/* Fila superior del encabezado con título y controles */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    font-weight: 600;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-header .subtitle {
-    font-size: 1.1rem;
-    opacity: 0.9;
+.header-left h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-main {
-    flex: 1;
-    padding: 30px 0;
+/* Botón de menú */
+#menuToggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
-.update-info {
-    background-color: var(--card-background);
-    padding: 15px 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    border-left: 4px solid var(--secondary-color);
+#menuToggle:focus {
+  outline: 2px solid var(--accent-color);
 }
 
-.update-info strong {
-    color: var(--cyan-text);
+/* Contenedor KPI */
+#kpi-container {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  flex: 1;
 }
 
-section {
-    margin-bottom: 40px;
+.kpi-card {
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 4px var(--card-shadow);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-h2 {
-    color: var(--text-color);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    padding-bottom: 10px;
-    border-bottom: 3px solid var(--secondary-color);
+.kpi-card .kpi-title {
+  font-size: 0.75rem;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.wells-container {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
+.kpi-card .kpi-value {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-.well-card {
-    min-width: 350px;
-    background-color: var(--card-background);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    flex-shrink: 0;
+/* Selector de tema (slider) */
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
 }
 
-.well-header {
-    background-color: var(--yellow-header);
-    color: #000;
-    padding: 20px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+.theme-switch input[type="checkbox"] {
+  display: none;
 }
 
-.well-letter {
-    background-color: #666;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
+.theme-switch .slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: var(--table-header-bg);
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
 }
 
-.well-table {
-    width: 100%;
-    border-collapse: collapse;
+.theme-switch .slider::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  transition: transform 0.3s ease;
 }
 
-.well-table thead {
-    background-color: #000;
+.theme-switch input[type="checkbox"]:checked + .slider::before {
+  transform: translateX(20px);
 }
 
-.well-table th {
-    padding: 15px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: 1px solid var(--border-color);
+/* Ocultar label del toggle por accesibilidad; se muestra solo en pantallas pequeñas */
+.switch-label {
+  font-size: 0.8rem;
 }
 
-.well-table td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid var(--border-color);
-    background-color: var(--card-background);
+/* Contenedor del interruptor de tema y botón de configuración en el encabezado */
+#controlsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.well-table .row-number {
-    background-color: #1a3a5c;
-    color: white;
-    font-weight: bold;
+/* Botón de configuración (icono engranaje) */
+.settings-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.well-table .fecha-cell {
-    color: var(--cyan-text);
-    font-weight: 500;
+.settings-button:hover {
+  background-color: var(--accent-color-light);
+  color: var(--accent-color);
 }
 
-.well-table .hora-cell {
-    color: var(--orange-text);
-    font-weight: 500;
+/* Modal para configuración */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
 }
 
-.well-table .tpn-cell {
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 500;
+.modal.show {
+  display: flex;
 }
 
-.well-table .fracturado-cell {
-    color: white;
-    font-size: 0.95rem;
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  min-width: 320px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 2px 8px var(--card-shadow);
 }
 
-.stock-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* Secciones dentro del modal de configuración */
+.settings-section {
+  margin-bottom: 1rem;
+}
+.settings-section h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  color: var(--accent-color);
+}
+.settings-tip {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+/* Acciones en el modal */
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.settings-actions button {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+.settings-actions .settings-save {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+.settings-actions .settings-reset {
+  background-color: var(--accent-color-light);
+  color: var(--text-color);
+}
+.settings-actions .settings-save:hover {
+  background-color: var(--accent-color);
+  opacity: 0.9;
+}
+.settings-actions .settings-reset:hover {
+  background-color: var(--accent-color-light);
+  opacity: 0.9;
 }
 
-.stock-card {
-    background-color: var(--card-background);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid var(--secondary-color);
+.modal-content h2 {
+  margin-bottom: 1rem;
 }
 
-.stock-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+.close-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
 }
 
-.stock-card h3 {
-    color: var(--cyan-text);
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.close-modal:hover {
+  color: var(--accent-color);
 }
 
-.stock-card .stock-value {
-    font-size: 2rem;
-    color: var(--success-color);
-    font-weight: 700;
+/* Menú lateral */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  background-color: var(--card-bg);
+  box-shadow: 2px 0 5px var(--card-shadow);
+  padding: 1rem;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
 }
 
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 25px 0;
-    margin-top: auto;
+/* Mostrar menú cuando tiene la clase open */
+#sidebar.open {
+  transform: translateX(0);
 }
 
-footer p {
-    margin: 5px 0;
-    opacity: 0.9;
+#sidebar h2 {
+  margin-bottom: 1rem;
 }
 
-/* Notificación de actualización */
-.update-notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    font-weight: 600;
-    z-index: 1000;
-    opacity: 0;
-    transform: translateX(400px);
-    transition: all 0.3s ease;
+#sidebar ul {
+  list-style: none;
 }
 
-.update-notification.show {
-    opacity: 1;
-    transform: translateX(0);
+#sidebar li {
+  margin-bottom: 0.5rem;
 }
 
-/* Scrollbar personalizado */
-.wells-container::-webkit-scrollbar {
-    height: 10px;
+#sidebar a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
 }
 
-.wells-container::-webkit-scrollbar-track {
-    background: var(--card-background);
-    border-radius: 5px;
+#sidebar a:hover {
+  color: var(--accent-color);
 }
 
-.wells-container::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
-    border-radius: 5px;
+/* Ajustar posición del contenido principal cuando el menú está abierto en pantallas grandes */
+#main {
+  flex: 1;
+  padding: 1rem;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
 }
 
-.wells-container::-webkit-scrollbar-thumb:hover {
-    background: #2980b9;
+#main.shifted {
+  /* Eliminado el menú lateral, por lo que no se aplica desplazamiento */
+  margin-left: 0;
 }
 
+/* Controles */
+/* Ocultar completamente la sección de controles heredada */
+#controls {
+  display: none !important;
+}
+
+/* Estilos para controles de pozos se definen en el modal */
+
+/* Auto-scroll label styling */
+.auto-scroll-label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* Contenedor de tablas. Para la tabla unificada se usa scroll horizontal cuando hay muchas columnas */
+#tables-wrapper {
+  display: block;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+/* Estilo para mensajes de error */
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+/* Contenedor individual de cada tabla con auto scroll vertical */
+.table-container {
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 4px var(--card-shadow);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  /* Para la tabla unificada, se expandirá según el contenido */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-container h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.table-wrapper-inner {
+  overflow-y: auto;
+  max-height: 300px; /* Altura limitada para poder auto-scroll */
+  border: 1px solid var(--table-header-bg);
+  border-radius: var(--border-radius);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Aumentar tamaño de fuente para mejor visibilidad en pantallas grandes
+     como televisores. 1rem es equivalente al tamaño base del cuerpo y
+     proporciona un texto más legible que el 0.8rem anterior. */
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Estilos para la celda de fecha y hora dividida en dos líneas */
+.date-part {
+  font-weight: 600;
+  display: block;
+  line-height: 1.1;
+}
+.time-part {
+  /* Incrementar ligeramente el tamaño de fuente de la hora para mantener
+     la legibilidad en pantallas grandes. */
+  font-size: 0.8rem;
+  color: var(--text-color);
+  display: block;
+}
+
+th, td {
+  /* Incrementar el relleno para dar más espacio alrededor del texto,
+     mejorando la legibilidad en pantallas grandes como televisores */
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: var(--accent-color-light);
+  color: var(--accent-color);
+  z-index: 1;
+  border: 1px solid var(--table-border-color);
+}
+
+/* Ajuste de sticky para filas de cabecera múltiples: la segunda fila debe quedar debajo de la primera */
+thead tr:first-child th {
+  top: 0;
+}
+thead tr:nth-child(2) th {
+  /* Altura aproximada de la primera fila de encabezado */
+  top: 1.8rem;
+}
+
+tr:nth-child(even) {
+  background-color: var(--accent-color-light);
+  border: 1px solid var(--table-border-color);
+}
+
+tr:hover {
+  background-color: var(--table-row-hover-bg);
+}
+
+/* Pie de página */
+#footer {
+  margin-top: auto;
+  padding: 0.75rem 1rem;
+  background-color: var(--card-bg);
+  text-align: center;
+  box-shadow: 0 -2px 4px var(--card-shadow);
+}
+
+/* Contenedor interior del pie de página; las tarjetas se muestran horizontalmente */
+#footer #footerContent {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-    
-    header .subtitle {
-        font-size: 0.95rem;
-    }
-    
-    h2 {
-        font-size: 1.5rem;
-    }
-    
-    .well-card {
-        min-width: 300px;
-    }
-    
-    .well-header {
-        font-size: 1.1rem;
-        padding: 15px;
-    }
-    
-    .well-table th,
-    .well-table td {
-        padding: 10px 8px;
-        font-size: 0.85rem;
-    }
-    
-    .stock-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .container {
-        padding: 0 15px;
-    }
-    
-    main {
-        padding: 20px 0;
-    }
+  #main.shifted {
+    /* No mover el contenido en pantallas pequeñas */
+    margin-left: 0;
+  }
+  /* Esconder el texto de la barra lateral, solo mostrar iconos si existiesen */
+  #sidebar ul li {
+    margin-bottom: 1rem;
+  }
+  /* Ajustar tabla en pantallas pequeñas */
+  .table-container {
+    min-width: 240px;
+  }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    
-    .well-card {
-        min-width: 280px;
-    }
-    
-    .well-table th,
-    .well-table td {
-        padding: 8px 5px;
-        font-size: 0.75rem;
-    }
-    
-    .stock-card .stock-value {
-        font-size: 1.5rem;
-    }
+  .kpi-card {
+    min-width: 120px;
+    padding: 0.5rem;
+  }
+  .header-left h1 {
+    font-size: 1rem;
+  }
 }
