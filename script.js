@@ -16,6 +16,38 @@ let hiddenStockItems = [];
 const autoScrollData = new Map();
 
 /**
+ * Obtiene el desplazamiento vertical deseado para mostrar la última fila
+ * con datos (fecha/hora o profundidad) en la tabla contenida en el elemento
+ * dado. Si no se encuentran filas con datos, se devuelve 0.
+ * @param {HTMLElement} inner Contenedor con overflow de la tabla
+ * @returns {number} Valor de scrollTop a aplicar
+ */
+function getLastDataScroll(inner) {
+  const table = inner.querySelector('table');
+  if (!table) return 0;
+  const rows = table.querySelectorAll('tbody tr');
+  let targetRow = null;
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    for (let i = 1; i < cells.length; i++) {
+      const mod = i % 3;
+      if (mod === 1 || mod === 2) {
+        if (cells[i].textContent && cells[i].textContent.trim() !== '') {
+          targetRow = row;
+        }
+      }
+    }
+  });
+  if (targetRow) {
+    const rowTop = targetRow.offsetTop;
+    const rowHeight = targetRow.offsetHeight;
+    const desired = rowTop + rowHeight - inner.clientHeight;
+    return Math.max(0, desired);
+  }
+  return 0;
+}
+
+/**
  * Al cargar el contenido del documento, configuramos los eventos
  * iniciales y solicitamos los datos.
  */
@@ -614,7 +646,8 @@ function updateFooter(data) {
     title.textContent = 'Actualización';
     const value = document.createElement('div');
     value.className = 'kpi-value';
-    value.textContent = lastUpdateDate.toLocaleString();
+    // Formatear la fecha de actualización en el footer como DD/MM/AAAA HH:MM:SS
+    value.textContent = lastUpdateDate.toLocaleString('es-AR', { hour12: false });
     card.appendChild(title);
     card.appendChild(value);
     cards.push(card);
@@ -649,26 +682,26 @@ function enableAutoScroll() {
       inner.dataset.lastUserScroll = Date.now().toString();
     };
     inner.addEventListener('scroll', scrollListener);
-    // Posicionar al final inicialmente para mostrar valores recientes
-    const maxScrollTop = inner.scrollHeight - inner.clientHeight;
-    if (maxScrollTop > 0) {
-      inner.scrollTop = maxScrollTop;
+    // Posicionar inicialmente en la última fila con datos (no al final absoluto)
+    const initialTarget = getLastDataScroll(inner);
+    if (initialTarget > 0) {
+      inner.scrollTop = initialTarget;
     }
-    // Crear intervalo que desplaza lentamente hacia abajo salvo que el usuario interactúe
+    // Crear intervalo que desplaza lentamente hacia la última fila con datos
     const intervalId = setInterval(() => {
       // Si el contenedor está oculto, omitir
       if (container.style.display === 'none') return;
       const last = parseInt(inner.dataset.lastUserScroll || '0');
       // Si el usuario ha interactuado en los últimos 3 segundos, no forzar scroll
       if (Date.now() - last < 3000) return;
-      const maxScroll = inner.scrollHeight - inner.clientHeight;
+      const maxScroll = getLastDataScroll(inner);
       if (maxScroll <= 0) return;
       if (inner.scrollTop < maxScroll - 2) {
         inner.scrollTop += 1;
       } else {
         inner.scrollTop = maxScroll;
       }
-    }, 50); // ajustar velocidad de desplazamiento
+    }, 50);
     autoScrollData.set(inner, { intervalId, scrollListener });
   });
 }
@@ -697,6 +730,41 @@ function excelSerialToDate(serial) {
   if (isNaN(num)) return null;
   const unixTimestamp = (num - 25569) * 86400 * 1000;
   return new Date(unixTimestamp);
+}
+
+/**
+ * Parsea una cadena de fecha y hora en formato "dd/mm/aaaa" o
+ * "dd/mm/aaaa hh:mm" o "dd/mm/aaaa hh:mm:ss" y devuelve un objeto
+ * Date local. Si no se puede parsear, retorna null.
+ * @param {string} str
+ * @returns {Date|null}
+ */
+function parseDateTimeString(str) {
+  if (!str || typeof str !== 'string') return null;
+  const trimmed = str.trim();
+  if (!trimmed) return null;
+  // Separar fecha y hora por espacio
+  const parts = trimmed.split(/\s+/);
+  const datePart = parts[0];
+  const dateSegs = datePart.split('/');
+  if (dateSegs.length !== 3) return null;
+  const day = parseInt(dateSegs[0], 10);
+  const month = parseInt(dateSegs[1], 10);
+  const year = parseInt(dateSegs[2], 10);
+  if (!Number.isFinite(day) || !Number.isFinite(month) || !Number.isFinite(year)) return null;
+  let hour = 0, minute = 0, second = 0;
+  if (parts.length > 1) {
+    const timePart = parts[1];
+    const timeSegs = timePart.split(':');
+    if (timeSegs.length >= 2) {
+      hour = parseInt(timeSegs[0], 10);
+      minute = parseInt(timeSegs[1], 10);
+      if (timeSegs.length >= 3) {
+        second = parseInt(timeSegs[2], 10);
+      }
+    }
+  }
+  return new Date(year, month - 1, day, hour, minute, second);
 }
 
 /**
@@ -743,23 +811,43 @@ function parseWellsFromData(data) {
       const secVal = row[secKey];
       const tpnVal = row[tpnKey];
       const fracVal = row[fracKey];
-      // Convertir fecha y hora
+      // Convertir fecha y hora. Formatear como DD/MM/AAAA HH:MM:SS en español de Argentina.
       let fechaHoraStr = '';
-      if (secVal && !isNaN(parseFloat(secVal))) {
-        const dateObj = excelSerialToDate(secVal);
-        fechaHoraStr = dateObj ? dateObj.toLocaleString() : '';
+      if (secVal) {
+        const numVal = parseFloat(secVal);
+        if (!isNaN(numVal)) {
+          // Valor numérico: serial de Excel
+          const dateObj = excelSerialToDate(numVal);
+          if (dateObj) {
+            const datePart = dateObj.toLocaleDateString('es-AR');
+            const timePart = dateObj.toLocaleTimeString('es-AR', { hour12: false });
+            fechaHoraStr = `${datePart}, ${timePart}`;
+          }
+        } else if (typeof secVal === 'string' && secVal.trim() !== '') {
+          // Intentar parsear cadena dd/mm/aaaa hh:mm
+          const dt = parseDateTimeString(secVal);
+          if (dt) {
+            const datePart = dt.toLocaleDateString('es-AR');
+            const timePart = dt.toLocaleTimeString('es-AR', { hour12: false });
+            fechaHoraStr = `${datePart}, ${timePart}`;
+          } else {
+            // Si no se puede parsear, mantener el valor tal cual
+            fechaHoraStr = secVal;
+          }
+        }
       }
       // Convertir profundidad si es numérica
       let profundidadVal = null;
       if (tpnVal && !isNaN(parseFloat(tpnVal))) {
         profundidadVal = parseFloat(tpnVal);
       }
-      // Convertir fecha de fractura (puede ser numérica o texto)
+      // Convertir fecha de fractura (puede ser numérica o texto). Si es numérica,
+      // formatear como DD/MM/AAAA. Si es texto (p.ej. "FRACTURADO"), mantenerlo.
       let fechaFracStr = '';
       if (fracVal) {
         if (!isNaN(parseFloat(fracVal))) {
           const fracDate = excelSerialToDate(fracVal);
-          fechaFracStr = fracDate ? fracDate.toLocaleDateString() : '';
+          fechaFracStr = fracDate ? fracDate.toLocaleDateString('es-AR') : '';
         } else {
           fechaFracStr = fracVal;
         }
@@ -785,31 +873,8 @@ function scrollTablesToBottom() {
   inners.forEach(inner => {
     // Solo desplazarse si la tabla contiene datos significativos
     if (inner.dataset.hasData === 'true') {
-      const table = inner.querySelector('table');
-      if (!table) return;
-      const rows = table.querySelectorAll('tbody tr');
-      let targetRow = null;
-      // Encontrar la última fila que tenga algún valor en columnas de fecha/hora o profundidad
-      rows.forEach(row => {
-        const cells = row.querySelectorAll('td');
-        // Comenzar desde la segunda celda (índice 1) porque índice 0 es la etapa
-        for (let i = 1; i < cells.length; i++) {
-          // Ignorar las columnas de fecha de fractura (que son la tercera columna de cada pozo)
-          // Para ello, las celdas con índice %3 == 0 son las de fractura
-          const mod = i % 3;
-          if (mod === 1 || mod === 2) { // columna F/h o Profundidad
-            if (cells[i].textContent && cells[i].textContent.trim() !== '') {
-              targetRow = row;
-            }
-          }
-        }
-      });
-      if (targetRow) {
-        // Calcular el desplazamiento para llevar la fila al borde inferior del contenedor
-        const rowTop = targetRow.offsetTop;
-        const rowHeight = targetRow.offsetHeight;
-        const desired = rowTop + rowHeight - inner.clientHeight;
-        const targetScroll = Math.max(0, desired);
+      const targetScroll = getLastDataScroll(inner);
+      if (targetScroll > 0) {
         inner.scrollTop = targetScroll;
       }
     }
