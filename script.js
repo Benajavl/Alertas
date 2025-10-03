@@ -153,7 +153,26 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       disableAutoScroll();
     }
+    try { localStorage.setItem('autoScroll', modalAutoScrollToggle.checked ? 'true' : 'false'); } catch (e) {}
   });
+
+  // Leer preferencia persistida de auto-scroll. Por defecto: ACTIVADO.
+  try {
+    const storedAuto = localStorage.getItem('autoScroll');
+    if (storedAuto === 'false') {
+      if (autoScrollToggle) autoScrollToggle.checked = false;
+    } else {
+      // Si no hay preferencia o está en true, activar auto-scroll por defecto
+      if (autoScrollToggle) autoScrollToggle.checked = true;
+      try { localStorage.setItem('autoScroll', 'true'); } catch (e) {}
+    }
+    // Sincronizar el toggle del modal si existe
+    if (modalAutoScrollToggle && autoScrollToggle) {
+      modalAutoScrollToggle.checked = autoScrollToggle.checked;
+    }
+  } catch (e) {
+    if (autoScrollToggle) autoScrollToggle.checked = true;
+  }
 
   // Configurar botones de acciones en el modal
   const resetBtn = document.getElementById('resetSettings');
@@ -175,9 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
         cb.checked = true;
       });
       // Desactivar auto desplazamiento
-      modalAutoScrollToggle.checked = false;
-      autoScrollToggle.checked = false;
-      disableAutoScroll();
+  modalAutoScrollToggle.checked = false;
+  autoScrollToggle.checked = false;
+  disableAutoScroll();
+  try { localStorage.setItem('autoScroll', 'false'); } catch (e) {}
 
       // Restablecer colores de pozos a valores por defecto
       wellColors = defaultWellColors.slice();
@@ -275,7 +295,16 @@ function updateDashboard(data) {
   // Si el auto-scroll estaba activado, reiniciar intervalos para que
   // se apliquen a las nuevas tablas.
   const autoScrollToggle = document.getElementById('autoScrollToggle');
-  if (autoScrollToggle.checked) {
+  // Sincronizar con preferencia persistida si existe
+  try {
+    const storedAuto = localStorage.getItem('autoScroll');
+    if (storedAuto === 'false') {
+      if (autoScrollToggle) autoScrollToggle.checked = false;
+    } else if (storedAuto === 'true') {
+      if (autoScrollToggle) autoScrollToggle.checked = true;
+    }
+  } catch (e) {}
+  if (autoScrollToggle && autoScrollToggle.checked) {
     enableAutoScroll();
   } else {
     disableAutoScroll();
@@ -650,7 +679,97 @@ function renderTables(data) {
   inner.dataset.hasData = String(hasAnyValue);
   // Vaciar contenedor y añadir la tabla unificada
   wrapper.innerHTML = '';
+  // Hacer el contenedor focusable para permitir navegación por teclado en TVs
+  wrapper.tabIndex = 0;
   wrapper.appendChild(container);
+
+  // Añadir manejador de teclado para navegación horizontal en pantallas TV
+  // Solo registrar una vez
+  if (!wrapper.dataset.tvKeyListener) {
+    wrapper.addEventListener('keydown', (ev) => {
+      // Evitar interferir con inputs o elementos interactivos
+      const active = document.activeElement;
+      if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
+      const step = 120; // cantidad de px que avanza con cada pulsación (ajustable)
+      switch (ev.key) {
+        case 'ArrowRight':
+          ev.preventDefault();
+          wrapper.scrollLeft += step;
+          break;
+        case 'ArrowLeft':
+          ev.preventDefault();
+          wrapper.scrollLeft -= step;
+          break;
+        case 'PageDown':
+          ev.preventDefault();
+          wrapper.scrollLeft += wrapper.clientWidth - 60;
+          break;
+        case 'PageUp':
+          ev.preventDefault();
+          wrapper.scrollLeft -= wrapper.clientWidth - 60;
+          break;
+        case 'Home':
+          ev.preventDefault();
+          wrapper.scrollLeft = 0;
+          break;
+        case 'End':
+          ev.preventDefault();
+          wrapper.scrollLeft = wrapper.scrollWidth;
+          break;
+        default:
+          break;
+      }
+    });
+    // Hacer que el contenedor tenga aria role y etiqueta para accesibilidad TV
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', 'Tabla de pozos, use flechas izquierda/derecha para desplazarse');
+    wrapper.dataset.tvKeyListener = '1';
+  }
+
+  // Registrar un listener global que reenvíe flechas al contenedor si
+  // no hay un control enfocado. Esto ayuda en TVs donde el foco puede
+  // quedarse en body y el usuario espera que las flechas muevan la tabla.
+  if (!window._pozosTvNavRegistered) {
+    window._pozosTvNavRegistered = true;
+    document.addEventListener('keydown', (ev) => {
+      // No interferir si el usuario está escribiendo
+      const active = document.activeElement;
+      if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
+      const wrapperEl = document.getElementById('tables-wrapper');
+      if (!wrapperEl) return;
+      // Solo manejar si existe overflow horizontal
+      if (wrapperEl.scrollWidth <= wrapperEl.clientWidth) return;
+      const step = 120;
+      switch (ev.key) {
+        case 'ArrowRight':
+          ev.preventDefault();
+          wrapperEl.scrollLeft += step;
+          break;
+        case 'ArrowLeft':
+          ev.preventDefault();
+          wrapperEl.scrollLeft -= step;
+          break;
+        case 'PageDown':
+          ev.preventDefault();
+          wrapperEl.scrollLeft += wrapperEl.clientWidth - 60;
+          break;
+        case 'PageUp':
+          ev.preventDefault();
+          wrapperEl.scrollLeft -= wrapperEl.clientWidth - 60;
+          break;
+        case 'Home':
+          ev.preventDefault();
+          wrapperEl.scrollLeft = 0;
+          break;
+        case 'End':
+          ev.preventDefault();
+          wrapperEl.scrollLeft = wrapperEl.scrollWidth;
+          break;
+        default:
+          break;
+      }
+    });
+  }
 }
 
 /**
