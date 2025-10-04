@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--
+  Versión móvil del dashboard de pozos con CSS y JS integrados.
+  Este archivo está pensado para dispositivos móviles: muestra
+  cuatro KPI principales (etapas totales, etapas de hoy, promedio
+  por día y etapas del día anterior) y una lista de tarjetas por
+  pozo. Cada tarjeta muestra el nombre del pozo y el número de
+  etapas realizadas; al pulsarla se despliega una tabla con el
+  historial de etapas de ese pozo.
+
+  El CSS y el JS están integrados directamente dentro del
+  documento para facilitar su implantación como un archivo único.
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Dashboard Móvil de Pozos</title>
+  <style>
+    /* Estilos para la versión móvil del dashboard de pozos */
+    :root {
+      --bg-color: #081d2d;
+      --card-bg: #0d3d6a;
+      --header-bg: #0c2c4b;
+      --text-muted: #7fbfff;
+      --text-accent: #7fffca;
+      --border-color: #133c5a;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-color);
+      color: #e0f2ff;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    /* Encabezado */
+    .mobile-header {
+      background-color: var(--header-bg);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .mobile-header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: #ffffff;
+    }
+
+    /* Contenedor principal */
+    .mobile-main {
+      padding-bottom: 2rem;
+    }
+
+    /* KPIs */
+    .mobile-kpis {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .mobile-kpi {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mobile-kpi-title {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .mobile-kpi-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    /* Tarjetas de pozos */
+    .mobile-wells {
+      padding: 0 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .mobile-well-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .mobile-well-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-well-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .mobile-well-count {
+      font-size: 0.9rem;
+      color: var(--text-accent);
+      font-weight: 600;
+    }
+
+    .mobile-well-details {
+      display: none;
+      margin-top: 0.5rem;
+    }
+
+    .mobile-well-details table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+
+    .mobile-well-details th,
+    .mobile-well-details td {
+      border: 1px solid var(--border-color);
+      padding: 0.25rem;
+      text-align: left;
+    }
+
+    .mobile-well-details th {
+      background-color: #0a2a46;
+      color: var(--text-muted);
+    }
+
+    .mobile-well-details tr:nth-child(even) {
+      background-color: #0e375a;
+    }
+
+    .mobile-well-details tr:nth-child(odd) {
+      background-color: #092543;
+    }
+
+    .mobile-well-details .date-part {
+      display: block;
+      font-weight: 600;
+    }
+
+    .mobile-well-details .time-part {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="mobile-header">
+    <h1>Dashboard de Pozos</h1>
+  </header>
+  <main class="mobile-main">
+    <!-- Contenedor de KPIs para móvil -->
+    <section id="mobileKpiContainer" class="mobile-kpis"></section>
+    <!-- Contenedor de tarjetas de pozos -->
+    <section id="mobileWellsContainer" class="mobile-wells"></section>
+  </main>
+  <script>
+    /*
+     * Lógica de la versión móvil del dashboard de pozos.
+     * Lee el JSON, construye las tarjetas KPI y las tarjetas de pozos con
+     * su historial. Adaptado para pantallas pequeñas.
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchData();
+    });
+
+    function fetchData() {
+      const dataUrl = './data.json?ts=' + Date.now();
+      fetch(dataUrl, { cache: 'no-store' })
+        .then(resp => resp.json())
+        .then(data => {
+          const structured = parseWellsFromData(data);
+          data.wells = structured.wells;
+          populateMobileKpis(data);
+          populateMobileWells(data);
+        })
+        .catch(err => {
+          console.error('Error cargando datos:', err);
+          const kpiContainer = document.getElementById('mobileKpiContainer');
+          if (kpiContainer) {
+            kpiContainer.textContent = 'No se pudieron cargar los datos.';
+          }
+        });
+    }
+
+    /**
+     * Convierte un número serial de Excel en objeto Date.
+     * @param {number|string} serial
+     */
+    function excelSerialToDate(serial) {
+      const num = parseFloat(serial);
+      if (isNaN(num)) return null;
+      const unixTimestamp = (num - 25569) * 86400 * 1000;
+      return new Date(unixTimestamp);
+    }
+
+    /**
+     * Parsea una cadena "dd/mm/aaaa" o "dd/mm/aaaa hh:mm" en Date.
+     * @param {string} str
+     */
+    function parseDateTimeString(str) {
+      if (!str || typeof str !== 'string') return null;
+      const trimmed = str.trim();
+      if (!trimmed) return null;
+      const parts = trimmed.split(/\s+/);
+      const datePart = parts[0];
+      const segs = datePart.split('/');
+      if (segs.length !== 3) return null;
+      const d = parseInt(segs[0], 10);
+      const m = parseInt(segs[1], 10);
+      const y = parseInt(segs[2], 10);
+      if (!Number.isFinite(d) || !Number.isFinite(m) || !Number.isFinite(y)) return null;
+      let hh = 0, mm = 0, ss = 0;
+      if (parts.length > 1) {
+        const t = parts[1];
+        const ts = t.split(':');
+        if (ts.length >= 2) {
+          hh = parseInt(ts[0], 10);
+          mm = parseInt(ts[1], 10);
+          if (ts.length >= 3) ss = parseInt(ts[2], 10);
+        }
+      }
+      return new Date(y, m - 1, d, hh, mm, ss);
+    }
+
+    /**
+     * Transforma la estructura del JSON en un array de pozos con sus etapas.
+     * Similar a la versión de escritorio pero adaptada al móvil.
+     */
+    function parseWellsFromData(data) {
+      const result = { wells: [] };
+      if (!data || !Array.isArray(data.items) || data.items.length === 0) {
+        return result;
+      }
+      // Cabecera con nombres alternativos
+      const headerRow = data.items[0] || {};
+      for (let i = 1; i <= 6; i++) {
+        const altKey = `FechaFracPozo${i}`;
+        const tpnKey = `TPNPozo${i}`;
+        let name = headerRow[altKey];
+        if (!name || name.toString().trim() === '' || name.toString().trim().toUpperCase() === 'X') {
+          name = headerRow[tpnKey];
+        }
+        if (!name || name.toString().trim() === '' || name.toString().trim().toUpperCase() === 'X') {
+          name = `Pozo ${i}`;
+        }
+        result.wells.push({ name: name, etapas: [] });
+      }
+      // Recorrer filas de etapas (comienzan en índice 2)
+      for (let j = 2; j < data.items.length; j++) {
+        const row = data.items[j];
+        if (!row) continue;
+        const stageLabel = (row.Fila || '').trim();
+        if (!stageLabel) continue;
+        for (let i = 1; i <= 6; i++) {
+          const well = result.wells[i - 1];
+          const secKey = `SecuenciaPozo${i}`;
+          const tpnKey = `TPNPozo${i}`;
+          const fracKey = `FechaFracPozo${i}`;
+          const secVal = row[secKey];
+          const tpnVal = row[tpnKey];
+          const fracVal = row[fracKey];
+          // Convertir fecha/hora
+          let fechaHoraStr = '';
+          if (secVal) {
+            const num = parseFloat(secVal);
+            if (!isNaN(num)) {
+              const d = excelSerialToDate(num);
+              if (d) {
+                const dp = d.toLocaleDateString('es-AR');
+                const tp = d.toLocaleTimeString('es-AR', { hour12: false });
+                fechaHoraStr = `${dp}, ${tp}`;
+              }
+            } else if (typeof secVal === 'string' && secVal.trim() !== '') {
+              const dt = parseDateTimeString(secVal);
+              if (dt) {
+                const dp = dt.toLocaleDateString('es-AR');
+                const tp = dt.toLocaleTimeString('es-AR', { hour12: false });
+                fechaHoraStr = `${dp}, ${tp}`;
+              } else {
+                fechaHoraStr = secVal;
+              }
+            }
+          }
+          // Profundidad
+          let profundidadVal = null;
+          if (tpnVal && !isNaN(parseFloat(tpnVal))) {
+            profundidadVal = parseFloat(tpnVal);
+          }
+          // Fecha de fractura
+          let fracStr = '';
+          if (fracVal) {
+            const fnum = parseFloat(fracVal);
+            if (!isNaN(fnum)) {
+              const fd = excelSerialToDate(fnum);
+              fracStr = fd ? fd.toLocaleDateString('es-AR') : '';
+            } else {
+              fracStr = fracVal;
+            }
+          }
+          well.etapas.push({ etapa: stageLabel, fechaHora: fechaHoraStr, profundidad: profundidadVal, fechaFractura: fracStr });
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Calcula y genera las tarjetas KPI para la versión móvil.
+     */
+    function populateMobileKpis(data) {
+      const container = document.getElementById('mobileKpiContainer');
+      container.innerHTML = '';
+      if (!data || !Array.isArray(data.wells)) return;
+      let totalStages = 0;
+      const stagesPerDay = {};
+      let yesterdayCount = 0;
+      const today = new Date();
+      const todayKey = today.toLocaleDateString('es-AR');
+      const yesterday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
+      const yKey = yesterday.toLocaleDateString('es-AR');
+      data.wells.forEach(well => {
+        well.etapas.forEach(etapa => {
+          if (etapa.fechaFractura && etapa.fechaFractura.trim() !== '') {
+            totalStages++;
+            // Agrupar por día
+            if (etapa.fechaFractura) {
+              const key = etapa.fechaFractura;
+              stagesPerDay[key] = (stagesPerDay[key] || 0) + 1;
+            }
+            // Contar ayer
+            if (etapa.fechaFractura === yKey) {
+              yesterdayCount++;
+            }
+          }
+        });
+      });
+      // Etapas de hoy
+      const todayStages = stagesPerDay[todayKey] || 0;
+      // Promedio etapas por día (redondeado)
+      const uniqueDays = Object.keys(stagesPerDay);
+      let avg = 0;
+      if (uniqueDays.length > 0) {
+        const sum = Object.values(stagesPerDay).reduce((a, b) => a + b, 0);
+        avg = Math.round(sum / uniqueDays.length);
+      }
+      const kpis = [
+        { title: 'Etapas totales', value: totalStages },
+        { title: 'Etapas hoy', value: todayStages },
+        { title: 'Promedio/día', value: avg },
+        { title: 'Etapas ayer', value: yesterdayCount }
+      ];
+      kpis.forEach(kpi => {
+        const card = document.createElement('div');
+        card.className = 'mobile-kpi';
+        const t = document.createElement('div');
+        t.className = 'mobile-kpi-title';
+        t.textContent = kpi.title;
+        const v = document.createElement('div');
+        v.className = 'mobile-kpi-value';
+        v.textContent = kpi.value;
+        card.appendChild(t);
+        card.appendChild(v);
+        container.appendChild(card);
+      });
+    }
+
+    /**
+     * Construye las tarjetas de pozos para la versión móvil.
+     */
+    function populateMobileWells(data) {
+      const container = document.getElementById('mobileWellsContainer');
+      container.innerHTML = '';
+      if (!data || !Array.isArray(data.wells)) return;
+      data.wells.forEach((well) => {
+        // Calcular etapas realizadas: contar si hay fecha de fractura o fecha/hora o profundidad
+        let count = 0;
+        well.etapas.forEach(et => {
+          if ((et.fechaHora && et.fechaHora.trim() !== '') || (typeof et.profundidad === 'number') || (et.fechaFractura && et.fechaFractura.trim() !== '' && et.fechaFractura.toUpperCase() !== 'FRACTURADO')) {
+            count++;
+          }
+        });
+        const card = document.createElement('div');
+        card.className = 'mobile-well-card';
+        const header = document.createElement('div');
+        header.className = 'mobile-well-header';
+        const nameEl = document.createElement('div');
+        nameEl.className = 'mobile-well-name';
+        nameEl.textContent = well.name;
+        const countEl = document.createElement('div');
+        countEl.className = 'mobile-well-count';
+        countEl.textContent = count;
+        header.appendChild(nameEl);
+        header.appendChild(countEl);
+        card.appendChild(header);
+        // Details table
+        const details = document.createElement('div');
+        details.className = 'mobile-well-details';
+        // Build table
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const trh = document.createElement('tr');
+        ['Etapa', 'Fecha/hora', 'Profundidad', 'Fractura'].forEach(h => {
+          const th = document.createElement('th');
+          th.textContent = h;
+          trh.appendChild(th);
+        });
+        thead.appendChild(trh);
+        table.appendChild(thead);
+        const tbody = document.createElement('tbody');
+        well.etapas.forEach(et => {
+          const tr = document.createElement('tr');
+          const td1 = document.createElement('td');
+          td1.textContent = et.etapa || '';
+          tr.appendChild(td1);
+          const td2 = document.createElement('td');
+          // Separar fecha y hora
+          let datePart = '';
+          let timePart = '';
+          if (et.fechaHora) {
+            const parts = et.fechaHora.split(',');
+            datePart = parts[0].trim();
+            if (parts.length > 1) timePart = parts.slice(1).join(',').trim();
+          }
+          td2.innerHTML = `<span class="date-part">${datePart}</span><span class="time-part">${timePart}</span>`;
+          tr.appendChild(td2);
+          const td3 = document.createElement('td');
+          td3.textContent = (et.profundidad !== null && et.profundidad !== undefined) ? et.profundidad : '';
+          tr.appendChild(td3);
+          const td4 = document.createElement('td');
+          td4.textContent = et.fechaFractura || '';
+          tr.appendChild(td4);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        details.appendChild(table);
+        card.appendChild(details);
+        // Toggle behaviour
+        card.addEventListener('click', () => {
+          details.style.display = details.style.display === 'none' || details.style.display === '' ? 'block' : 'none';
+        });
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
