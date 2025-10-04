@@ -874,7 +874,7 @@ function renderTables(data) {
  * adicional en los datos. Oculta el pie si no hay nada que mostrar.
  * @param {object} data Objeto de datos con metadatos.
  */
-function updateFooter(data) {
+/** function updateFooter(data) {
   const footer = document.getElementById('footer');
   const footerContent = document.getElementById('footerContent');
   // Construir tarjetas KPI en el pie de página. Borrar contenido previo.
@@ -921,7 +921,7 @@ function updateFooter(data) {
     footer.hidden = true;
   }
 }
-
+ */
 /**
  * Activa el desplazamiento automático vertical en todas las tablas visibles.
  * Para cada tabla se crea un intervalo que incrementa la posición de scroll
