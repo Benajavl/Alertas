@@ -337,7 +337,7 @@ function updateDashboard(data) {
   populateKpi(data);
   renderWellControls(data);
   renderTables(data);
-  updateFooter(data);
+  //updateFooter(data);
   // Actualizar controles del modal
   renderModalControls(data);
   renderStockControls(data);
