@@ -454,6 +454,9 @@ th, td {
      mejorando la legibilidad en pantallas grandes como televisores */
   padding: 0.75rem;
   text-align: left;
+  /*modificacion 04/10/2025 para centrar texto y lineas tablas*/
+  text-align: center;
+  border-right: 1px solid #ccc
 }
 
 th {
