@@ -547,7 +547,7 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "waskita",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
@@ -883,7 +883,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-04T06:20:49.1972917Z",
+  "lastUpdate": "2025-10-04T06:22:14.0923871Z",
   "stock": [
     {
       "ITEM": "GAS OIL",
