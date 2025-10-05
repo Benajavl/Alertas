@@ -418,7 +418,8 @@ function populateKpi(data) {
   if (uniqueDates.length > 0) {
     const sum = Object.values(stagesPerDay).reduce((a, b) => a + b, 0);
     const avg = sum / uniqueDates.length;
-    avgStagesPerDay = Math.round(avg);
+    // calcular promedio sin redondear Math.round(avg)
+    avgStagesPerDay = avg;
   } else {
     avgStagesPerDay = 'N/A';
   }
