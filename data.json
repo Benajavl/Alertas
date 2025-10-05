@@ -883,7 +883,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-05T22:51:32.1770713Z",
+  "lastUpdate": "2025-10-05T23:27:55.1924953Z",
   "stock": [
     {
       "ITEM": "GAS OIL",
@@ -891,7 +891,7 @@
     },
     {
       "ITEM": "ARENA #100",
-      "STOCK": ""
+      "STOCK": "20"
     },
     {
       "ITEM": "ARENA #30/70",
