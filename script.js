@@ -658,7 +658,7 @@ function renderTables(data) {
   // Segunda fila de cabecera: sub columnas para cada pozo
   const headerRow2 = document.createElement('tr');
   data.wells.forEach((well, index) => {
-    ['Fecha y hora', 'Profundidad TPN', 'Fecha fractura'].forEach(subName => {
+    ['Fecha TPN', 'TPN', 'FRAC'].forEach(subName => {
       const th = document.createElement('th');
       th.textContent = subName;
       th.setAttribute('data-well-name', well.name);
