@@ -593,7 +593,7 @@
       "FechaFracPozo2": "45935",
       "FechaFracPozo3": "45936",
       "FechaFracPozo4": "45936",
-      "FechaFracPozo5": "FRACTURAR",
+      "FechaFracPozo5": "45936",
       "FechaFracPozo6": "FRACTURAR",
       "Fila": "#27",
       "SecuenciaPozo1": "45935.4756944444",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-06T10:03:41.7371779Z",
+  "lastUpdate": "2025-10-06T16:47:43.2839281Z",
   "stock": [
     {
       "ITEM": "Etapas Totales",
@@ -1252,7 +1252,7 @@
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "171"
+      "STOCK": "170"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1264,7 +1264,7 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "160"
+      "STOCK": "161"
     },
     {
       "ITEM": "",
