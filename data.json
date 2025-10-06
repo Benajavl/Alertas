@@ -621,13 +621,13 @@
       "SecuenciaPozo2": "45936.2569444444",
       "SecuenciaPozo3": "45936.3277777778",
       "SecuenciaPozo4": "",
-      "SecuenciaPozo5": "",
+      "SecuenciaPozo5": "45936.5",
       "SecuenciaPozo6": "",
       "TPNPozo1": "4725",
       "TPNPozo2": "4824.5",
       "TPNPozo3": "4685",
       "TPNPozo4": "",
-      "TPNPozo5": "",
+      "TPNPozo5": "4650",
       "TPNPozo6": ""
     },
     {
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-06T16:49:19.6818824Z",
+  "lastUpdate": "2025-10-06T16:49:54.7519294Z",
   "stock": [
     {
       "ITEM": "Etapas Totales",
