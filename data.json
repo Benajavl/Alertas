@@ -883,7 +883,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-06T01:39:36.0092512Z",
+  "lastUpdate": "2025-10-06T01:40:09.3133928Z",
   "stock": [
     {
       "ITEM": "Etapas Totales",
@@ -907,7 +907,7 @@
     },
     {
       "ITEM": "Etapa Acumuladas hasta el momento",
-      "STOCK": ""
+      "STOCK": "157"
     },
     {
       "ITEM": "",
