@@ -883,26 +883,26 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-06T01:03:08.3801899Z",
+  "lastUpdate": "2025-10-06T01:03:55.0640302Z",
   "stock": [
     {
-      "ITEM": "GAS OIL",
+      "ITEM": "Etapas Totales",
+      "STOCK": "331"
+    },
+    {
+      "ITEM": "Etapas Acumuladas",
+      "STOCK": "0"
+    },
+    {
+      "ITEM": "Etapas Faltantes",
       "STOCK": ""
     },
     {
-      "ITEM": "ARENA #100",
-      "STOCK": "20"
-    },
-    {
-      "ITEM": "ARENA #30/70",
+      "ITEM": "Etapas/días calendario",
       "STOCK": ""
     },
     {
-      "ITEM": "GEL BOLSONES",
-      "STOCK": ""
-    },
-    {
-      "ITEM": "GEL TOTE",
+      "ITEM": "Fecha inicio fractura",
       "STOCK": ""
     }
   ]
