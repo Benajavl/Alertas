@@ -883,7 +883,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-06T01:04:28.8851526Z",
+  "lastUpdate": "2025-10-06T01:05:02.4986281Z",
   "stock": [
     {
       "ITEM": "Etapas Totales",
@@ -891,7 +891,7 @@
     },
     {
       "ITEM": "Etapas Acumuladas",
-      "STOCK": "0"
+      "STOCK": "145"
     },
     {
       "ITEM": "Etapas Faltantes",
@@ -899,11 +899,11 @@
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": ""
+      "STOCK": "7.63157894736842"
     },
     {
       "ITEM": "Fecha inicio fractura",
-      "STOCK": ""
+      "STOCK": "45914.1729166667"
     }
   ]
 }
