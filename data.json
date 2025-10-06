@@ -606,7 +606,7 @@
       "TPNPozo2": "4884.5",
       "TPNPozo3": "4745",
       "TPNPozo4": "4750",
-      "TPNPozo5": "",
+      "TPNPozo5": "4710",
       "TPNPozo6": ""
     },
     {
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-06T07:05:58.7024059Z",
+  "lastUpdate": "2025-10-06T07:07:21.0741824Z",
   "stock": [
     {
       "ITEM": "Etapas Totales",
