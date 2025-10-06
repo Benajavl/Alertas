@@ -1,4 +1,3 @@
-@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,8 +25,6 @@
         <button id="settingsButton" class="settings-button" aria-label="Configuración">⚙︎</button>
       </div>
     </div>
-    <!-- Contenedor para las tarjetas KPI generado dinámicamente -->
-    <div id="kpi-container"></div>
     <!-- Contenedor para las tarjetas KPI generado dinámicamente (fila separada) -->
     <div id="kpi-row">
       <div id="kpi-container"></div>
@@ -35,17 +32,54 @@
   </header>
 
   <!-- Contenedor principal del contenido -->
-@ -73,10 +75,9 @@
+  <main id="main">
+    <!-- Contenedor de mensajes de error -->
+    <div id="error" class="error" hidden></div>
+    <!-- Controles heredados eliminados; la selección se gestiona desde el modal -->
+    <input type="checkbox" id="autoScrollToggle" style="display:none;" aria-hidden="true">
+    <!-- Contenedor de las tablas generadas a partir de los pozos -->
+    <div id="tables-wrapper"></div>
+  </main>
+
+  <!-- Modal de configuración para seleccionar pozos y auto-scroll -->
+  <div id="settingsModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeSettings" class="close-modal" aria-label="Cerrar">×</button>
+      <h2>Configuración</h2>
+      <!-- Sección de pozos visibles -->
+      <div class="settings-section">
+        <h3>Pozos visibles</h3>
+        <p class="settings-tip">Siempre queda al menos un pozo visible.</p>
+        <div id="modalWellControls"></div>
+      </div>
+      <!-- Sección de auto desplazamiento -->
+      <div class="settings-section">
+        <h3>Auto desplazamiento</h3>
+        <label class="auto-scroll-label">
+          <input type="checkbox" id="modalAutoScrollToggle">
+          Auto desplazamiento
+        </label>
+      </div>
+      <!-- Sección para personalizar tarjetas de stock -->
+      <div class="settings-section">
+        <h3>Tarjetas de stock</h3>
+        <p class="settings-tip">Elige los ítems de stock a mostrar en el pie.</p>
+        <div id="modalStockControls"></div>
+      </div>
+      <!-- Acciones -->
+      <div class="settings-actions">
+        <button id="resetSettings" class="settings-reset">Restablecer</button>
+        <button id="saveSettings" class="settings-save">Guardar</button>
+      </div>
+    </div>
   </div>
 
   <!-- Pie de página que se mostrará solo si hay información específica -->
-   <!-- <footer id="footer" hidden>
-     
-   <div id="footerContent"></div> 
-  </footer> -->
   <footer id="footer" hidden>
     <div id="footerContent"></div>
   </footer>
 
   <!-- Lógica del lado del cliente para manejar datos y eventos -->
   <script src="script.js"></script>
+</body>
+</html>
