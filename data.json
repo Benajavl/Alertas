@@ -634,8 +634,8 @@
       "FechaFracPozo1": "45937",
       "FechaFracPozo2": "45937",
       "FechaFracPozo3": "45937",
-      "FechaFracPozo4": "A FRACTURAR",
-      "FechaFracPozo5": "PUNZADO",
+      "FechaFracPozo4": "Fracturando",
+      "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#29",
       "SecuenciaPozo1": "45936.75",
@@ -643,13 +643,13 @@
       "SecuenciaPozo3": "45937.1666666667",
       "SecuenciaPozo4": "45937.3694444444",
       "SecuenciaPozo5": "45937.3020833333",
-      "SecuenciaPozo6": "",
+      "SecuenciaPozo6": "45943.5555555556",
       "TPNPozo1": "4665",
       "TPNPozo2": "4764.5",
       "TPNPozo3": "4625",
       "TPNPozo4": "4630",
       "TPNPozo5": "4590",
-      "TPNPozo6": "PUNZANDO"
+      "TPNPozo6": "4725"
     },
     {
       "FechaFracPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-07T13:36:05.2048781Z",
+  "lastUpdate": "2025-10-07T17:36:17.1299281Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
