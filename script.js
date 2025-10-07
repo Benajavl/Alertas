@@ -933,29 +933,26 @@ function updateFooter(data) {
       const value = document.createElement('div');
       value.className = 'kpi-value';
       // Intentar formatear valores numéricos
+     
       const num = parseFloat(stockRaw.replace(/,/g, '.'));
       let display = stockRaw;
       const lname = name.toLowerCase();
       if (!isNaN(num)) {
-        // Fecha / fractura: convertir serial a fecha
-        if (lname.includes('fecha') || lname.includes('fractura')) {
+        // <--- reemplazar TODO lo que hay adentro por esto:
+        if (lname.includes('avance') && lname.includes('fractura')) {
+          // si viene entre 0 y 1 => convertir a porcentaje
+          const pct = (num >= 0 && num <= 1) ? num * 100 : num;
+          display = pct.toFixed(1) + '%';
+        } else if (lname.includes('fecha') || lname.includes('fractura')) {
           const d = excelSerialToDate(num);
-          if (d && !isNaN(d.getTime())) {
-            display = d.toLocaleDateString('es-AR');
-          } else {
-            display = stockRaw;
-          }
+          display = (d && !isNaN(d.getTime())) ? d.toLocaleDateString('es-AR') : stockRaw;
         } else if (lname.includes('/') || lname.includes('etapas/d')) {
-          // Ratios explícitos como 'Etapas/días' (tienen '/' o texto 'etapas/d') -> 2 decimales
           display = num.toFixed(2);
         } else if (lname.includes('etap')) {
-          // KPIs de etapas que representan contadores deben mostrarse como enteros
           display = String(Math.round(num));
         } else if (lname.includes('dí') || lname.includes('dia') || lname.includes('dias')) {
-          // Otros KPIs que hablan de días no relacionados con 'Etapas/días'
           display = num.toFixed(2);
         } else {
-          // Por defecto mostrar número tal cual
           display = Number.isInteger(num) ? String(num) : String(num);
         }
       }
