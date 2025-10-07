@@ -2,9 +2,9 @@
   "items": [
     {
       "FechaFracPozo1": "Lca-3101(h)",
-      "FechaFracPozo2": "Lca-3102(h)",
+      "FechaFracPozo2": "Lca-3102(h) SLIM",
       "FechaFracPozo3": "Lca-3103(h)",
-      "FechaFracPozo4": "Lca-3104(h)",
+      "FechaFracPozo4": "Lca-3104(h) SLIM",
       "FechaFracPozo5": "Lca-3105(h)",
       "FechaFracPozo6": "Lca-3106(h)",
       "Fila": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-07T23:21:21.8386334Z",
+  "lastUpdate": "2025-10-07T23:23:50.9190162Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
