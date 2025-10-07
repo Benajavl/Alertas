@@ -649,7 +649,7 @@
       "TPNPozo3": "4625",
       "TPNPozo4": "4630",
       "TPNPozo5": "4590",
-      "TPNPozo6": ""
+      "TPNPozo6": "PUNZANDO"
     },
     {
       "FechaFracPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-07T12:06:40.9252911Z",
+  "lastUpdate": "2025-10-07T13:03:50.4634829Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
