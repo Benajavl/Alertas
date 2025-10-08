@@ -653,10 +653,10 @@
     },
     {
       "FechaFracPozo1": "45937",
-      "FechaFracPozo2": "WL",
+      "FechaFracPozo2": "WL Falla Ilusion",
       "FechaFracPozo3": "FT1",
       "FechaFracPozo4": "",
-      "FechaFracPozo5": "",
+      "FechaFracPozo5": "WL Punza aca",
       "FechaFracPozo6": "",
       "Fila": "#30",
       "SecuenciaPozo1": "45937.625",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-08T02:18:12.4421700Z",
+  "lastUpdate": "2025-10-08T02:59:44.0715772Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
