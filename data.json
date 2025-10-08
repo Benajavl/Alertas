@@ -653,14 +653,14 @@
     },
     {
       "FechaFracPozo1": "45937",
-      "FechaFracPozo2": "WL Falla Ilusion",
-      "FechaFracPozo3": "FT1",
+      "FechaFracPozo2": "FT",
+      "FechaFracPozo3": "45938",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#30",
       "SecuenciaPozo1": "45937.625",
-      "SecuenciaPozo2": "45938",
+      "SecuenciaPozo2": "45938.1076388889",
       "SecuenciaPozo3": "45937.6909722222",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "45938.0347222222",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-08T05:46:56.9516877Z",
+  "lastUpdate": "2025-10-08T05:48:07.0753099Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "175"
+      "STOCK": "176"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "156"
+      "STOCK": "155"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.528700906344411"
+      "STOCK": "0.531722054380665"
     },
     {
       "ITEM": "Etapas/días calendario",
