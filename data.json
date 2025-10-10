@@ -720,7 +720,7 @@
       "FechaFracPozo3": "45940",
       "FechaFracPozo4": "45940",
       "FechaFracPozo5": "45940",
-      "FechaFracPozo6": "Problema Centrifuga",
+      "FechaFracPozo6": "Retoma FT",
       "Fila": "#33",
       "SecuenciaPozo1": "45939.5972222222",
       "SecuenciaPozo2": "45939.8958333333",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-10T15:04:25.5063276Z",
+  "lastUpdate": "2025-10-10T17:50:04.3385418Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
