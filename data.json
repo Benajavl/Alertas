@@ -747,13 +747,13 @@
       "SecuenciaPozo2": "45940",
       "SecuenciaPozo3": "45940.3659722222",
       "SecuenciaPozo4": "",
-      "SecuenciaPozo5": "",
+      "SecuenciaPozo5": "45940.8784722222",
       "SecuenciaPozo6": "",
       "TPNPozo1": "4365",
       "TPNPozo2": "4460.5",
       "TPNPozo3": "4325",
       "TPNPozo4": "",
-      "TPNPozo5": "",
+      "TPNPozo5": "4290",
       "TPNPozo6": ""
     },
     {
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-11T00:32:16.4077056Z",
+  "lastUpdate": "2025-10-11T00:34:22.8230832Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
