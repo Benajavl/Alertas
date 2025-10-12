@@ -786,7 +786,7 @@
       "FechaFracPozo6": "",
       "Fila": "#36",
       "SecuenciaPozo1": "45941.7916666667",
-      "SecuenciaPozo2": "",
+      "SecuenciaPozo2": "45942.0277777778",
       "SecuenciaPozo3": "45941.8645833333",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-12T03:40:39.7397174Z",
+  "lastUpdate": "2025-10-12T03:41:15.9587444Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
