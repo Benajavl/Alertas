@@ -774,7 +774,7 @@
       "TPNPozo2": "4404",
       "TPNPozo3": "4265",
       "TPNPozo4": "4270",
-      "TPNPozo5": "4320",
+      "TPNPozo5": "4230",
       "TPNPozo6": "4385"
     },
     {
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-12T02:53:55.5393732Z",
+  "lastUpdate": "2025-10-12T03:35:42.5687516Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1264,15 +1264,15 @@
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "7.45515259765568"
+      "STOCK": "7.54660477652259"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "7"
+      "STOCK": "10"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "10"
+      "STOCK": "0"
     },
     {
       "ITEM": "",
@@ -1284,7 +1284,7 @@
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "200"
+      "STOCK": "210"
     },
     {
       "ITEM": "",
