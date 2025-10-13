@@ -802,7 +802,7 @@
       "FechaFracPozo1": "45942",
       "FechaFracPozo2": "45942",
       "FechaFracPozo3": "45942",
-      "FechaFracPozo4": "45942",
+      "FechaFracPozo4": "FRACTURADO",
       "FechaFracPozo5": "FT1",
       "FechaFracPozo6": "FT2",
       "Fila": "#37",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-13T01:16:58.3402874Z",
+  "lastUpdate": "2025-10-13T01:17:32.9302016Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "220"
+      "STOCK": "219"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "111"
+      "STOCK": "112"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.664652567975831"
+      "STOCK": "0.661631419939577"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "10"
+      "STOCK": "9"
     },
     {
       "ITEM": "",
