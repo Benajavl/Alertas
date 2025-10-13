@@ -1,11 +1,11 @@
 {
   "items": [
     {
-      "FechaFracPozo1": "Lca-3101(h)",
-      "FechaFracPozo2": "Lca-3102 ILUSION",
-      "FechaFracPozo3": "Lca-3103(h)",
-      "FechaFracPozo4": "Lca-3104 ILUSION",
-      "FechaFracPozo5": "Lca-3105(h)",
+      "FechaFracPozo1": "Lca-3101 OSA",
+      "FechaFracPozo2": "Lca-3102 CO ILUSION",
+      "FechaFracPozo3": "Lca-3103 OIB",
+      "FechaFracPozo4": "Lca-3104 OIA ILUSION",
+      "FechaFracPozo5": "Lca-3105OIB",
       "FechaFracPozo6": "Lca-3106(h)",
       "Fila": "",
       "SecuenciaPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-13T13:49:49.2873652Z",
+  "lastUpdate": "2025-10-13T13:50:21.5666595Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
