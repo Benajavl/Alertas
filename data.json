@@ -2,7 +2,7 @@
   "items": [
     {
       "FechaFracPozo1": "Lca-3101 OSA",
-      "FechaFracPozo2": "Lca-3102 CO ",
+      "FechaFracPozo2": "Lca-3102 CO 31491064",
       "FechaFracPozo3": "Lca-3103 OIB",
       "FechaFracPozo4": "Lca-3104 OIA",
       "FechaFracPozo5": "Lca-3105 OIB",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-16T13:07:44.6600163Z",
+  "lastUpdate": "2025-10-16T13:12:15.2982868Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
