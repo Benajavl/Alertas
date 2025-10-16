@@ -918,7 +918,7 @@
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
       "TPNPozo1": "3879.5",
-      "TPNPozo2": "",
+      "TPNPozo2": "3986",
       "TPNPozo3": "",
       "TPNPozo4": "",
       "TPNPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-16T07:42:58.7768655Z",
+  "lastUpdate": "2025-10-16T07:43:31.6067112Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
