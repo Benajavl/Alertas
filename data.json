@@ -9,7 +9,7 @@
       "FechaFracPozo6": "Lca-3106 CO",
       "Fila": "",
       "SecuenciaPozo1": "Etapas 54",
-      "SecuenciaPozo2": "",
+      "SecuenciaPozo2": "Etapas 55",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-16T13:52:22.2813798Z",
+  "lastUpdate": "2025-10-16T13:55:54.0538842Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
