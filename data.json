@@ -8,7 +8,7 @@
       "FechaFracPozo5": "Lca-3105 OIB",
       "FechaFracPozo6": "Lca-3106 CO",
       "Fila": "",
-      "SecuenciaPozo1": "",
+      "SecuenciaPozo1": "Etapas 54",
       "SecuenciaPozo2": "",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-16T13:51:49.7911659Z",
+  "lastUpdate": "2025-10-16T13:52:22.2813798Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
