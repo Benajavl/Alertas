@@ -1,15 +1,15 @@
 {
   "items": [
     {
-      "FechaFracPozo1": "Lca-3101 OSA  e35",
-      "FechaFracPozo2": "Lca-3102 CO",
+      "FechaFracPozo1": "Lca-3101 OSA  ET 54",
+      "FechaFracPozo2": "Lca-3102 CO ET 55",
       "FechaFracPozo3": "Lca-3103 OIB",
       "FechaFracPozo4": "Lca-3104 OIA",
       "FechaFracPozo5": "Lca-3105 OIB",
       "FechaFracPozo6": "Lca-3106 CO",
       "Fila": "",
-      "SecuenciaPozo1": "Etapas 54",
-      "SecuenciaPozo2": "Etapas 55",
+      "SecuenciaPozo1": "",
+      "SecuenciaPozo2": "",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-16T14:05:23.9484027Z",
+  "lastUpdate": "2025-10-16T14:05:56.3795955Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
