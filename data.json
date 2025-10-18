@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-18T23:48:48.2029530Z",
+  "lastUpdate": "2025-10-18T23:49:19.4866373Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1275,8 +1275,8 @@
       "STOCK": "7"
     },
     {
-      "ITEM": "",
-      "STOCK": ""
+      "ITEM": "Vel E/d (last 5 days)",
+      "STOCK": "8.6"
     },
     {
       "ITEM": "",
