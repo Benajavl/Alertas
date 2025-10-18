@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-18T21:15:53.3539958Z",
+  "lastUpdate": "2025-10-18T21:26:28.3907709Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1275,8 +1275,8 @@
       "STOCK": "7"
     },
     {
-      "ITEM": "",
-      "STOCK": ""
+      "ITEM": "vagos",
+      "STOCK": "s"
     },
     {
       "ITEM": "",
