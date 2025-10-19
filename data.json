@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-19T11:30:07.4801066Z",
+  "lastUpdate": "2025-10-19T11:45:01.4485429Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,14 +1280,14 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "45955.815191949"
+      "STOCK": "45955.828004449"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
       "STOCK": "270"
     },
     {
-      "ITEM": "Adrian Flojo",
+      "ITEM": "",
       "STOCK": ""
     }
   ]
