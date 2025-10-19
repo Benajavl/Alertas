@@ -988,7 +988,7 @@
       "TPNPozo6": "3786.5"
     },
     {
-      "FechaFracPozo1": "FT1",
+      "FechaFracPozo1": "45949",
       "FechaFracPozo2": "FT2",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-18T23:59:36.8192132Z",
+  "lastUpdate": "2025-10-19T03:48:11.9300411Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,39 +1252,39 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "270"
+      "STOCK": "271"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "57"
+      "STOCK": "56"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.825688073394495"
+      "STOCK": "0.828746177370031"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "7.74527314159097"
+      "STOCK": "7.75258718669693"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "10"
-    },
-    {
-      "ITEM": "Etapas Realizadas Hoy",
       "STOCK": "8"
     },
     {
+      "ITEM": "Etapas Realizadas Hoy",
+      "STOCK": "1"
+    },
+    {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "8.6"
+      "STOCK": "8.2"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "45955.5005436666"
+      "STOCK": "45955.862732876"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "262"
+      "STOCK": "270"
     },
     {
       "ITEM": "Adrian Flojo",
