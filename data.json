@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-20T00:09:01.5262742Z",
+  "lastUpdate": "2025-10-20T00:09:36.4098709Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "45955.8564913533"
+      "STOCK": "45955.8571567468"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
@@ -1288,7 +1288,7 @@
     },
     {
       "ITEM": "Adrian ponete a laburar",
-      "STOCK": ""
+      "STOCK": "1"
     },
     {
       "ITEM": "Bombas en Locacion",
