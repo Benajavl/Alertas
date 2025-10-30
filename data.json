@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-10-30T03:05:13.8920988Z",
+  "lastUpdate": "2025-10-30T03:05:47.3539468Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1292,7 +1292,7 @@
     },
     {
       "ITEM": "Bombas en Locacion",
-      "STOCK": "26"
+      "STOCK": "5"
     }
   ]
 }
