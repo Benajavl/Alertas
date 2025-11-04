@@ -43,12 +43,12 @@
       "TPNPozo6": "TPN"
     },
     {
-      "FechaFracPozo1": "PREFRAC",
-      "FechaFracPozo2": "PREFRAC",
-      "FechaFracPozo3": "PREFRAC",
-      "FechaFracPozo4": "PREFRAC",
-      "FechaFracPozo5": "PREFRAC",
-      "FechaFracPozo6": "PREFRAC",
+      "FechaFracPozo1": "",
+      "FechaFracPozo2": "Fractura 1",
+      "FechaFracPozo3": "",
+      "FechaFracPozo4": "",
+      "FechaFracPozo5": "",
+      "FechaFracPozo6": "",
       "Fila": "#01",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-11-04T10:11:17.1427368Z",
+  "lastUpdate": "2025-11-04T12:40:07.6711373Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1292,7 +1292,7 @@
     },
     {
       "ITEM": "Bombas en Locacion",
-      "STOCK": "5"
+      "STOCK": "26"
     }
   ]
 }
