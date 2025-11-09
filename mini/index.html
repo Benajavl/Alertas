@@ -1,1 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Alertas • Mini App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root{--bg:#0b0c10;--card:#14161a;--muted:#9aa3ad;--text:#e8edf2;--accent:#3b82f6;--good:#22c55e;--warn:#f59e0b;--bad:#ef4444;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.25);--gap:14px}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica Neue,Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+    .wrap{min-height:100%;padding:20px env(safe-area-inset-right) 28px env(safe-area-inset-left);display:flex;flex-direction:column;gap:18px}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+    .card{grid-column:span 12;background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+
+    .progress{display:flex;align-items:center;gap:16px}
+    .ring{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;position:relative}
+    .ring::before{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--card);border:1px solid rgba(255,255,255,.08)}
+    .ring>span{position:relative;font-weight:800}
+
+    .kpis{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+    .kpi{grid-column:span 6;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px}
+    .label{color:var(--muted);font-size:12px}
+    .value{font-size:20px;font-weight:800;margin-top:6px}
+    .sub{margin-top:6px;font-size:12px;color:var(--muted)}
+
+    footer{margin-top:auto;opacity:.6;font-size:12px;color:var(--muted)}
+
+    @media(min-width:740px){.kpi{grid-column:span 3}.card.span-6{grid-column:span 6}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="grid">
+    <!-- Avance total -->
+    <div class="card span-6" id="avanceCard">
+      <div class="progress">
+        <div class="ring" id="ring"><span id="avancePct">0%</span></div>
+        <div>
+          <div class="label">Avance total</div>
+          <div class="value" id="avanceText">0%</div>
+          <div class="sub" id="avanceSub">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPIs solicitados -->
+    <div class="card span-6">
+      <div class="kpis">
+        <div class="kpi"><div class="label">Hoy</div><div class="value" id="kpiHoy">—</div></div>
+        <div class="kpi"><div class="label">Ayer</div><div class="value" id="kpiAyer">—</div></div>
+        <div class="kpi"><div class="label">Bombas</div><div class="value" id="kpiBombas">—</div></div>
+        <div class="kpi"><div class="label">Acumuladas</div><div class="value" id="kpiAcumuladas">—</div></div>
+        <div class="kpi"><div class="label">Rendimiento</div><div class="value" id="kpiRend">—</div><div class="sub">Ayer / Hoy</div></div>
+      </div>
+    </div>
+
+    <!-- Avance por pozo (pie) -->
+    <div class="card">
+      <div class="label" style="font-weight:800;margin-bottom:8px">Avance por pozo</div>
+      <div id="avancePozos">—</div>
+    </div>
+  </section>
+
+  <footer>Actualiza automáticamente cuando cambia el JSON.</footer>
+</div>
+
+<script>
+// === CONFIG ===
+const DATA_CANDIDATES=['../data.json'];
+const POLL_MIN_MS=15000,POLL_MAX_MS=120000;let pollMs=POLL_MIN_MS;let pollTimer=null;
+
+// Estado (declaración única)
+const state={etag:null,lastModified:null,lastHash:null,currentUrl:null};
+
+// Utils
+const fmt=new Intl.NumberFormat('es-AR');
+const pct=v=>`${(v*100).toFixed(2)}%`;
+const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+function excelDateToJSDate(s){return new Date((Number(s)-25569)*86400*1000)}
+function paintRing(el,val){const v=clamp(val||0,0,1),deg=Math.round(v*360);let c='var(--accent)';if(v>=.85)c='var(--good)';else if(v<.5)c='var(--warn)';el.style.background=`conic-gradient(${c} ${deg}deg,rgba(255,255,255,.08) ${deg}deg)`}
+async function simpleHash(str){const buf=new TextEncoder().encode(str);const dig=await crypto.subtle.digest('SHA-256',buf);return Array.from(new Uint8Array(dig)).map(b=>b.toString(16).padStart(2,'0')).join('')}
+
+async function fetchJsonWithCond(u){
+  const h={};
+  if(state.etag)h['If-None-Match']=state.etag;
+  if(state.lastModified)h['If-Modified-Since']=state.lastModified;
+  const r=await fetch(u,{headers:h,cache:'no-cache'});
+  if(r.status===304)return{changed:false};
+  if(!r.ok)throw Error(`HTTP ${r.status}`);
+  const et=r.headers.get('ETag');
+  const lm=r.headers.get('Last-Modified');
+  const j=await r.json();
+  const hash=await simpleHash(JSON.stringify(j));
+  const changed=(et&&et!==state.etag)||(lm&&lm!==state.lastModified)||(hash!==state.lastHash);
+  state.etag=et||state.etag; state.lastModified=lm||state.lastModified; state.lastHash=hash;
+  return {changed,data:j};
+}
+
+async function resolveDataUrl(){
+  if(state.currentUrl) return state.currentUrl;
+  for(const c of DATA_CANDIDATES){
+    try{const p=await fetch(c,{cache:'no-cache'}); if(p.ok){state.currentUrl=c;return c;}}catch(_){}
+  }
+  throw Error('No se encontró data.json en rutas candidatas');
+}
+
+async function loadData(){
+  const url=await resolveDataUrl();
+  const r=await fetchJsonWithCond(url);
+  return r.changed? r.data : null;
+}
+
+function computeKpis(arr){
+  const S=Object.fromEntries((arr||[]).filter(x=>x&&x.ITEM).map(x=>[x.ITEM,String(x.STOCK)]));
+  const getN=k=> S[k]!=null && S[k]!=='' ? Number(S[k]) : null;
+  const tot = getN('Etapas Totales') ?? 0;
+  const rea = getN('Etapa Acumuladas Realizadas') ?? 0;
+  const fal = getN('Etapas Faltantes'); // no usado en UI, pero útil
+  const av  = S['Avance Fractura']!=null && S['Avance Fractura']!=='' ? Number(S['Avance Fractura']) : (tot? (rea/tot):0);
+  const ay  = getN('Etapas Realizadas Ayer');
+  const hy  = getN('Etapas Realizadas Hoy');
+  const bombas = getN('Bombas en Locacion');
+  return {tot,rea,fal,av,ay,hy,bombas};
+}
+
+function extractPozos(items){
+  // Cabecera: items[0].FechaFracPozoN = "Lca-3188 CO ET 49" → id=3188, total=49
+  const head=items[0]||{}; const totals=[];
+  for(let i=1;i<=6;i++){
+    const txt=(head[`FechaFracPozo${i}`]||'').toString();
+    const m=txt.match(/(\d{3,4}).*?ET\s*(\d+)/i);
+    const id=m? m[1] : `P${i}`;
+    const total=m? Number(m[2]) : 0;
+    totals.push({id,total});
+  }
+  // Cuenta realizadas por pozo: cualquier fila con SecuenciaPozoN no vacío
+  const counts=new Array(6).fill(0);
+  for(let r=0;r<items.length;r++){
+    for(let i=1;i<=6;i++){
+      const v=items[r]?.[`SecuenciaPozo${i}`];
+      if(v!==undefined && v!==null && String(v).trim()!=='') counts[i-1]++;
+    }
+  }
+  return totals.map((t,idx)=>{const done=Math.min(counts[idx], t.total||counts[idx]); const p=t.total? done/t.total : 0; return {id:t.id,total:t.total,done,pct:p};});
+}
+
+function updateUI(payload){
+  if(!payload) return; // sin cambios
+  const items=Array.isArray(payload.items)?payload.items:[];
+  const {tot,rea,av,ay,hy,bombas}=computeKpis(payload.stock||[]);
+
+  // KPIs
+  document.getElementById('kpiHoy').textContent = hy!=null? hy : '—';
+  document.getElementById('kpiAyer').textContent = ay!=null? ay : '—';
+  document.getElementById('kpiBombas').textContent = bombas!=null? bombas : '—';
+  document.getElementById('kpiAcumuladas').textContent = fmt.format(rea);
+  document.getElementById('kpiRend').textContent = `${ay??0} / ${hy??0}`;
+
+  // Avance total
+  document.getElementById('avancePct').textContent = pct(av||0);
+  document.getElementById('avanceText').textContent = pct(av||0);
+  document.getElementById('avanceSub').textContent = `${fmt.format(rea)} / ${fmt.format(tot)} etapas`;
+  paintRing(document.getElementById('ring'), av||0);
+
+  // Avance por pozo (pie)
+  const pozoInfo=extractPozos(items);
+  const chips=pozoInfo.map(p=>`${p.id}: ${p.done}/${p.total} (${Math.round((p.pct||0)*100)}%)`);
+  document.getElementById('avancePozos').textContent = chips.length? chips.join(' • ') : '—';
+}
+
+async function tick(){
+  try{
+    const data=await loadData();
+    if(data){ updateUI(data); pollMs=POLL_MIN_MS; }
+    else { pollMs=Math.min(Math.round(pollMs*1.5),POLL_MAX_MS); }
+  }catch(err){
+    console.warn('tick error', err); pollMs=Math.min(Math.round(pollMs*2),POLL_MAX_MS);
+  }finally{ schedule(); }
+}
+
+function schedule(){ clearTimeout(pollTimer); pollTimer=setTimeout(()=>{ if(document.visibilityState==='visible'){ tick(); } else { schedule(); } }, pollMs); }
+
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible'){ pollMs=POLL_MIN_MS; tick(); }});
+
+// ===== TESTS RÁPIDOS =====
+(function runTests(){
+  try{
+    // 1) state único
+    console.assert(typeof state==='object' && state.currentUrl===null, 'state único no inicializado correctamente');
+    // 2) paintRing setea conic-gradient
+    const d=document.createElement('div'); paintRing(d,.72); console.assert((d.style.background||'').includes('conic-gradient'),'paintRing no aplicó conic-gradient');
+    // 3) computeKpis
+    const sample=[
+      {ITEM:'Etapas Totales',STOCK:'289'},
+      {ITEM:'Etapa Acumuladas Realizadas',STOCK:'23'},
+      {ITEM:'Etapas Faltantes',STOCK:'266'},
+      {ITEM:'Avance Fractura',STOCK:'0.0795847750865052'},
+      {ITEM:'Etapas Realizadas Ayer',STOCK:'5'},
+      {ITEM:'Etapas Realizadas Hoy',STOCK:'5'},
+      {ITEM:'Bombas en Locacion',STOCK:'25'}
+    ];
+    const k=computeKpis(sample);
+    console.assert(k.tot===289 && k.rea===23, 'KPIs tot/rea');
+    console.assert(Math.abs(k.av-0.0795847750865052)<1e-9, 'KPI avance');
+    console.assert(k.ay===5 && k.hy===5 && k.bombas===25, 'KPIs ay/hy/bombas');
+    // 4) extractPozos parsea id/ET
+    const items=[{FechaFracPozo1:'Lca-3188 CO ET 49',FechaFracPozo2:'Lca-3189 CO ET 49'},{SecuenciaPozo1:'x'},{SecuenciaPozo1:'y',SecuenciaPozo2:'z'}];
+    const p=extractPozos(items);
+    console.assert(p[0].total===49 && p[0].done>=2, 'Pozo1 conteo');
+    console.assert(p[1].total===49 && p[1].done>=1, 'Pozo2 conteo');
+    console.log('[Tests] OK');
+  }catch(e){ console.warn('[Tests] fallo', e); }
+})();
+
+// Go!
+resolveDataUrl().then(()=>tick());
+</script>
+</body>
+</html>
 
