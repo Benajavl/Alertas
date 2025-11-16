@@ -277,9 +277,9 @@
       "FechaFracPozo1": "45976",
       "FechaFracPozo2": "45976",
       "FechaFracPozo3": "45976",
-      "FechaFracPozo4": "Fracturar",
-      "FechaFracPozo5": "F2",
-      "FechaFracPozo6": "F3",
+      "FechaFracPozo4": "45977",
+      "FechaFracPozo5": "Fracturando",
+      "FechaFracPozo6": "F2",
       "Fila": "#12",
       "SecuenciaPozo1": "45976.3958333333",
       "SecuenciaPozo2": "45976.46875",
@@ -295,7 +295,7 @@
       "TPNPozo6": "5188"
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "F3",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
@@ -303,13 +303,13 @@
       "FechaFracPozo6": "",
       "Fila": "#13",
       "SecuenciaPozo1": "45977.0743055556",
-      "SecuenciaPozo2": "",
+      "SecuenciaPozo2": "45977.1951388889",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
       "TPNPozo1": "5374",
-      "TPNPozo2": "",
+      "TPNPozo2": "5411",
       "TPNPozo3": "",
       "TPNPozo4": "",
       "TPNPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-11-16T06:05:50.6222592Z",
+  "lastUpdate": "2025-11-16T08:09:54.8353850Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "69"
+      "STOCK": "70"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "220"
+      "STOCK": "219"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.238754325259516"
+      "STOCK": "0.242214532871972"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "0"
+      "STOCK": "1"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46006.0729208516"
+      "STOCK": "46006.0310015107"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
