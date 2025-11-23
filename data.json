@@ -426,7 +426,7 @@
       "FechaFracPozo3": "45983",
       "FechaFracPozo4": "45983",
       "FechaFracPozo5": "45982",
-      "FechaFracPozo6": "Fracturando",
+      "FechaFracPozo6": "45983",
       "Fila": "#19",
       "SecuenciaPozo1": "45982.8284722222",
       "SecuenciaPozo2": "45982.9513888889",
@@ -452,14 +452,14 @@
       "SecuenciaPozo1": "45983.6881944444",
       "SecuenciaPozo2": "22-22-2025 18:55",
       "SecuenciaPozo3": "45983.9583333333",
-      "SecuenciaPozo4": "45983.1458333333",
-      "SecuenciaPozo5": "",
+      "SecuenciaPozo4": "45984.1458333333",
+      "SecuenciaPozo5": "45984.2083333333",
       "SecuenciaPozo6": "",
       "TPNPozo1": "4954",
       "TPNPozo2": "4991",
       "TPNPozo3": "4805",
       "TPNPozo4": "4849",
-      "TPNPozo5": "4709",
+      "TPNPozo5": "4987",
       "TPNPozo6": ""
     },
     {
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-11-23T09:14:36.4658062Z",
+  "lastUpdate": "2025-11-23T09:15:11.0661160Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,23 +1252,23 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "116"
+      "STOCK": "117"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "173"
+      "STOCK": "172"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.401384083044983"
+      "STOCK": "0.404844290657439"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "5.79487179487179"
+      "STOCK": "5.84615384615385"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "5"
+      "STOCK": "6"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
@@ -1276,15 +1276,15 @@
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "6.8"
+      "STOCK": "7"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46009.7009131604"
+      "STOCK": "46008.8317375992"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "113"
+      "STOCK": "114"
     },
     {
       "ITEM": "",
