@@ -885,15 +885,15 @@
     {
       "FechaFracPozo1": "46000",
       "FechaFracPozo2": "",
-      "FechaFracPozo3": "ESPERA FRACTURA",
+      "FechaFracPozo3": "Fracturando",
       "FechaFracPozo4": "",
-      "FechaFracPozo5": "",
+      "FechaFracPozo5": "Wl",
       "FechaFracPozo6": "",
       "Fila": "#41",
       "SecuenciaPozo1": "45999.9895833333",
       "SecuenciaPozo2": "",
       "SecuenciaPozo3": "46000.1944444444",
-      "SecuenciaPozo4": "WL",
+      "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
       "TPNPozo1": "3695",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-12-09T12:01:34.3716364Z",
+  "lastUpdate": "2025-12-09T12:02:06.8650230Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46005.9713192295"
+      "STOCK": "46005.9715181878"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
