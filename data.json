@@ -884,7 +884,7 @@
     },
     {
       "FechaFracPozo1": "46000",
-      "FechaFracPozo2": "Espera Fractura",
+      "FechaFracPozo2": "46000",
       "FechaFracPozo3": "46000",
       "FechaFracPozo4": "46000",
       "FechaFracPozo5": "46000",
@@ -904,17 +904,17 @@
       "TPNPozo6": "3414.5"
     },
     {
-      "FechaFracPozo1": "FRACTURANDO",
+      "FechaFracPozo1": "46000",
       "FechaFracPozo2": "",
-      "FechaFracPozo3": "WL",
+      "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#42",
       "SecuenciaPozo1": "46000.5972222222",
       "SecuenciaPozo2": "",
-      "SecuenciaPozo3": "",
-      "SecuenciaPozo4": "",
+      "SecuenciaPozo3": "46000.8638888889",
+      "SecuenciaPozo4": "46000.3055555556",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
       "TPNPozo1": "3635",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-12-09T22:00:00.4278850Z",
+  "lastUpdate": "2025-12-10T03:19:43.3294775Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,39 +1252,39 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "245"
+      "STOCK": "247"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "43"
+      "STOCK": "41"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.850694444444444"
+      "STOCK": "0.857638888888889"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "6.67605633802817"
+      "STOCK": "6.76712328767123"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "9"
+      "STOCK": "10"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "8"
+      "STOCK": "0"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "8.4"
+      "STOCK": "8.8"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46005.9101667163"
+      "STOCK": "46005.6727500526"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "237"
+      "STOCK": "247"
     },
     {
       "ITEM": "",
