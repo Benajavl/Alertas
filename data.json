@@ -3,7 +3,7 @@
     {
       "FechaFracPozo1": "LCa-3188 CO  ET 49",
       "FechaFracPozo2": "LCa-3189 CO ET 49",
-      "FechaFracPozo3": "LCa-3190 OIB ET 47",
+      "FechaFracPozo3": "LCa-3190 OIB ET 46",
       "FechaFracPozo4": "LCa-3191 OMA ET 48",
       "FechaFracPozo5": "LCa-3192 CO ET 49",
       "FechaFracPozo6": "LCa-3193 OIB ET 47",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2025-12-12T02:06:13.0640923Z",
+  "lastUpdate": "2025-12-12T02:40:59.5404507Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46005.8690127396"
+      "STOCK": "46005.8937682951"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
