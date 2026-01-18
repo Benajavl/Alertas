@@ -8,7 +8,7 @@
       "FechaFracPozo5": "Colocar Pozo",
       "FechaFracPozo6": "Colocar Pozo",
       "Fila": "",
-      "SecuenciaPozo1": "",
+      "SecuenciaPozo1": "ET.55",
       "SecuenciaPozo2": "",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-01-18T20:32:44.5660217Z",
+  "lastUpdate": "2026-01-18T20:39:58.1801890Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
