@@ -86,7 +86,7 @@
     },
     {
       "FechaFracPozo1": "46045",
-      "FechaFracPozo2": "Fracturando",
+      "FechaFracPozo2": "46045",
       "FechaFracPozo3": "FlowBack",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
@@ -106,21 +106,21 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "Wl",
-      "FechaFracPozo2": "",
+      "FechaFracPozo1": "Fracturando",
+      "FechaFracPozo2": "Wl",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#04",
-      "SecuenciaPozo1": "",
+      "SecuenciaPozo1": "46045.8958333333",
       "SecuenciaPozo2": "",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
-      "TPNPozo1": "",
-      "TPNPozo2": "",
+      "TPNPozo1": "6112",
+      "TPNPozo2": "6012",
       "TPNPozo3": "",
       "TPNPozo4": "",
       "TPNPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-01-24T00:04:33.9997552Z",
+  "lastUpdate": "2026-01-24T04:43:16.3678202Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,39 +1252,39 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "7"
+      "STOCK": "8"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "157"
+      "STOCK": "156"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.0426829268292683"
+      "STOCK": "0.0487804878048781"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "1.62711864406619"
+      "STOCK": "2.31325301204657"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "3"
+      "STOCK": "4"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "3"
+      "STOCK": "0"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "0.8"
+      "STOCK": "1.6"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46242.1261045139"
+      "STOCK": "46143.5717111111"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "4"
+      "STOCK": "8"
     },
     {
       "ITEM": "",
