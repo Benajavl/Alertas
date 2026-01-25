@@ -129,7 +129,7 @@
     {
       "FechaFracPozo1": "46046",
       "FechaFracPozo2": "46046",
-      "FechaFracPozo3": "Erosivo Refuerzo",
+      "FechaFracPozo3": "Wl",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
@@ -169,7 +169,7 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "WL",
+      "FechaFracPozo1": "Fracturar",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
@@ -182,7 +182,7 @@
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
-      "TPNPozo1": "",
+      "TPNPozo1": "5932",
       "TPNPozo2": "",
       "TPNPozo3": "",
       "TPNPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-01-25T08:53:06.4406439Z",
+  "lastUpdate": "2026-01-25T08:53:39.4438274Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46100.4591035384"
+      "STOCK": "46100.4596730985"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
