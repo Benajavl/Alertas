@@ -10,7 +10,7 @@
       "Fila": "",
       "SecuenciaPozo1": "Etapas 55",
       "SecuenciaPozo2": "Etapas 54",
-      "SecuenciaPozo3": "Etapas 53",
+      "SecuenciaPozo3": "Etapas 52",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-01-26T11:04:48.2166147Z",
+  "lastUpdate": "2026-01-26T11:53:18.2203957Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46085.1786865132"
+      "STOCK": "46085.2124456567"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
