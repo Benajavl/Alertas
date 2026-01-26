@@ -3,7 +3,7 @@
     {
       "FechaFracPozo1": "LCa-3295(h)CO 55 ET",
       "FechaFracPozo2": "LCa-3296(h)CO 54 ET",
-      "FechaFracPozo3": "LCa-3297(h)CO 53 ET",
+      "FechaFracPozo3": "LCa-3297(h)CO 52 ET",
       "FechaFracPozo4": "Colocar Pozo",
       "FechaFracPozo5": "Colocar Pozo",
       "FechaFracPozo6": "Colocar Pozo",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-01-26T11:53:18.2203957Z",
+  "lastUpdate": "2026-01-26T11:53:48.5613143Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1248,7 +1248,7 @@
     },
     {
       "ITEM": "Etapas Totales",
-      "STOCK": "162"
+      "STOCK": "161"
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
@@ -1256,11 +1256,11 @@
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "140"
+      "STOCK": "139"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.135802469135802"
+      "STOCK": "0.136645962732919"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46085.2124456567"
+      "STOCK": "46084.9494484101"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
