@@ -247,7 +247,7 @@
       "SecuenciaPozo6": "",
       "TPNPozo1": "",
       "TPNPozo2": "",
-      "TPNPozo3": "WL POOH",
+      "TPNPozo3": "5578",
       "TPNPozo4": "",
       "TPNPozo5": "",
       "TPNPozo6": ""
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-01-26T23:05:21.2711448Z",
+  "lastUpdate": "2026-01-26T23:15:37.0357488Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46084.3632421784"
+      "STOCK": "46084.370487896"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
