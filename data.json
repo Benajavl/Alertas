@@ -526,8 +526,8 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "FRACTURA 1",
-      "FechaFracPozo2": "",
+      "FechaFracPozo1": "Fracturando",
+      "FechaFracPozo2": "BHA Pesca",
       "FechaFracPozo3": "46055",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-02T16:56:58.4275716Z",
+  "lastUpdate": "2026-02-02T16:57:30.1687697Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46070.2586435447"
+      "STOCK": "46070.2587539613"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
