@@ -526,7 +526,7 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "Fracturando",
+      "FechaFracPozo1": "46055",
       "FechaFracPozo2": "BHA Pesca",
       "FechaFracPozo3": "46055",
       "FechaFracPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-02T16:58:05.3737163Z",
+  "lastUpdate": "2026-02-02T23:46:51.4067952Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "70"
+      "STOCK": "71"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "91"
+      "STOCK": "90"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.434782608695652"
+      "STOCK": "0.440993788819876"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "4"
+      "STOCK": "5"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46070.2587539613"
+      "STOCK": "46070.3819937313"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
