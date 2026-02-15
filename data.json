@@ -969,7 +969,7 @@
     {
       "FechaFracPozo1": "46067",
       "FechaFracPozo2": "46068",
-      "FechaFracPozo3": "F1",
+      "FechaFracPozo3": "FRACTURANDO",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-15T23:48:11.7847861Z",
+  "lastUpdate": "2026-02-15T23:48:42.8518410Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46072.7067960648"
+      "STOCK": "46072.7069376157"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
