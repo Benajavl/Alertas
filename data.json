@@ -1,16 +1,16 @@
 {
   "items": [
     {
-      "FechaFracPozo1": "Lca-3101 OSA",
-      "FechaFracPozo2": "Lca-3102 CO ILUSION",
-      "FechaFracPozo3": "Lca-3103 OIB",
-      "FechaFracPozo4": "Lca-3104 OIA ILUSION",
-      "FechaFracPozo5": "Lca-3105 OIB",
-      "FechaFracPozo6": "Lca-3106 CO",
+      "FechaFracPozo1": "LCa-3295(h)CO 55 ET",
+      "FechaFracPozo2": "LCa-3296(h)CO 53 ET",
+      "FechaFracPozo3": "LCa-3297(h)CO 52 ET",
+      "FechaFracPozo4": "Colocar Pozo",
+      "FechaFracPozo5": "Colocar Pozo",
+      "FechaFracPozo6": "Colocar Pozo",
       "Fila": "",
-      "SecuenciaPozo1": "",
-      "SecuenciaPozo2": "",
-      "SecuenciaPozo3": "",
+      "SecuenciaPozo1": "Etapas 55",
+      "SecuenciaPozo2": "Etapas 53",
+      "SecuenciaPozo3": "Etapas 52",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
@@ -989,7 +989,7 @@
     },
     {
       "FechaFracPozo1": "46068",
-      "FechaFracPozo2": "F1",
+      "FechaFracPozo2": "FRACTURANDO",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-15T21:39:25.5003602Z",
+  "lastUpdate": "2026-02-15T22:13:35.9996809Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1268,19 +1268,19 @@
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "0"
+      "STOCK": "4"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "0"
+      "STOCK": "3"
     },
     {
-      "ITEM": "",
-      "STOCK": "0"
+      "ITEM": "Vel E/d (last 5 days)",
+      "STOCK": "6.25"
     },
     {
-      "ITEM": "",
-      "STOCK": "#¡DIV/0!"
+      "ITEM": "Fecha Fin Frac",
+      "STOCK": "46072.7987827546"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
@@ -1289,6 +1289,10 @@
     {
       "ITEM": "",
       "STOCK": ""
+    },
+    {
+      "ITEM": "Bombas en Locacion",
+      "STOCK": "26"
     }
   ]
 }
