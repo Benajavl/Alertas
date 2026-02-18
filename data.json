@@ -1136,7 +1136,7 @@
     },
     {
       "FechaFracPozo1": "46071",
-      "FechaFracPozo2": "",
+      "FechaFracPozo2": "Fracturar",
       "FechaFracPozo3": " TPN PRUEBA BOOBA",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-18T12:57:22.3350505Z",
+  "lastUpdate": "2026-02-18T13:05:05.8243967Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46071.722526104"
+      "STOCK": "46071.7278894142"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
