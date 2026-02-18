@@ -1137,7 +1137,7 @@
     {
       "FechaFracPozo1": "46071",
       "FechaFracPozo2": "",
-      "FechaFracPozo3": "BAJANDO TPN PRUEBA",
+      "FechaFracPozo3": " TPN PRUEBA BOOBA",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
@@ -1156,7 +1156,7 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "A FRACTURAR",
+      "FechaFracPozo1": "46071",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-18T12:02:38.5297085Z",
+  "lastUpdate": "2026-02-18T12:57:22.3350505Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "157"
+      "STOCK": "158"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "3"
+      "STOCK": "2"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.98125"
+      "STOCK": "0.9875"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "3"
+      "STOCK": "4"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46071.838366818"
+      "STOCK": "46071.722526104"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
