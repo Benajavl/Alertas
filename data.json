@@ -1136,7 +1136,7 @@
     },
     {
       "FechaFracPozo1": "46071",
-      "FechaFracPozo2": "Fracturar",
+      "FechaFracPozo2": "46071",
       "FechaFracPozo3": " TPN PRUEBA BOOBA",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
@@ -1157,7 +1157,7 @@
     },
     {
       "FechaFracPozo1": "46071",
-      "FechaFracPozo2": "",
+      "FechaFracPozo2": " TPN PRUEBA BOOBA",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
@@ -1177,20 +1177,20 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "Fracturando ",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#55",
-      "SecuenciaPozo1": "",
+      "SecuenciaPozo1": "46071.4548611111",
       "SecuenciaPozo2": "",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
-      "TPNPozo1": "",
+      "TPNPozo1": "2992.5",
       "TPNPozo2": "",
       "TPNPozo3": "",
       "TPNPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-18T13:07:18.7602169Z",
+  "lastUpdate": "2026-02-18T16:25:14.0382670Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "158"
+      "STOCK": "159"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "2"
+      "STOCK": "1"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.9875"
+      "STOCK": "0.99375"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "4"
+      "STOCK": "5"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46071.7286757568"
+      "STOCK": "46071.713028214"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
