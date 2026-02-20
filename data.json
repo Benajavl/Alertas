@@ -12,8 +12,8 @@
       "SecuenciaPozo2": "Cant ET",
       "SecuenciaPozo3": "Cant ET",
       "SecuenciaPozo4": "Cant ET",
-      "SecuenciaPozo5": "",
-      "SecuenciaPozo6": "",
+      "SecuenciaPozo5": "Cant ET",
+      "SecuenciaPozo6": "Cant ET",
       "TPNPozo1": "POZO #1",
       "TPNPozo2": "POZO #2",
       "TPNPozo3": "POZO #3",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-20T10:36:06.9602825Z",
+  "lastUpdate": "2026-02-20T10:36:39.4674005Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
