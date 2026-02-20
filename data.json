@@ -1,8 +1,8 @@
 {
   "items": [
     {
-      "FechaFracPozo1": "LCa-3295(h)CO 55 ET",
-      "FechaFracPozo2": "LCa-3296(h)CO 53 ET",
+      "FechaFracPozo1": "LCa-3034(h) OMA",
+      "FechaFracPozo2": "LCa-3035(h) CO",
       "FechaFracPozo3": "LCa-3297(h)CO 52 ET",
       "FechaFracPozo4": "Colocar Pozo",
       "FechaFracPozo5": "Colocar Pozo",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-20T10:36:39.4674005Z",
+  "lastUpdate": "2026-02-20T10:37:48.1559834Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
