@@ -8,10 +8,10 @@
       "FechaFracPozo5": "Colocar Pozo",
       "FechaFracPozo6": "Colocar Pozo",
       "Fila": "",
-      "SecuenciaPozo1": "Etapas 55",
-      "SecuenciaPozo2": "Etapas 53",
-      "SecuenciaPozo3": "Etapas 52",
-      "SecuenciaPozo4": "",
+      "SecuenciaPozo1": "Cant ET",
+      "SecuenciaPozo2": "Cant ET",
+      "SecuenciaPozo3": "Cant ET",
+      "SecuenciaPozo4": "Cant ET",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
       "TPNPozo1": "POZO #1",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-20T10:34:55.3240949Z",
+  "lastUpdate": "2026-02-20T10:36:06.9602825Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
