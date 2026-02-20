@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-20T10:33:41.7211705Z",
+  "lastUpdate": "2026-02-20T10:34:21.7728152Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1248,7 +1248,7 @@
     },
     {
       "ITEM": "Etapas Totales",
-      "STOCK": "160"
+      "STOCK": ""
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
@@ -1256,11 +1256,11 @@
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "160"
+      "STOCK": "0"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0"
+      "STOCK": "#¡DIV/0!"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1292,7 +1292,7 @@
     },
     {
       "ITEM": "Bombas en Locacion",
-      "STOCK": "26"
+      "STOCK": "0"
     }
   ]
 }
