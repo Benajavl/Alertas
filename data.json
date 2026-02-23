@@ -43,12 +43,12 @@
       "TPNPozo6": "TPN"
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "WL",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "46076",
       "FechaFracPozo5": "FT",
-      "FechaFracPozo6": "WL",
+      "FechaFracPozo6": "",
       "Fila": "#01",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-23T05:31:19.2212857Z",
+  "lastUpdate": "2026-02-23T06:04:44.0256188Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
