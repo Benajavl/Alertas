@@ -8,7 +8,7 @@
       "FechaFracPozo5": "LCa-3038 OIB 51 ET",
       "FechaFracPozo6": "LCa-3039 51 CO",
       "Fila": "",
-      "SecuenciaPozo1": "ET 49",
+      "SecuenciaPozo1": "ET 50",
       "SecuenciaPozo2": "ET 49",
       "SecuenciaPozo3": "ET 49",
       "SecuenciaPozo4": "ET 50",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-23T10:36:40.2881211Z",
+  "lastUpdate": "2026-02-23T10:51:13.2941564Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
