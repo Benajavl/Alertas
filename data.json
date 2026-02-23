@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "FechaFracPozo1": "LCa-3034 OMA 49 ET",
+      "FechaFracPozo1": "LCa-3034 OMA 50 ET",
       "FechaFracPozo2": "LCa-3035 CO 49 ET",
       "FechaFracPozo3": "LCa-3036 OIB 49 ET",
       "FechaFracPozo4": "LCa-3037 OMA 50 ET",
@@ -1240,15 +1240,15 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-23T10:51:13.2941564Z",
+  "lastUpdate": "2026-02-23T10:51:44.5139944Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
-      "STOCK": "46076"
+      "STOCK": "46076.0145833333"
     },
     {
       "ITEM": "Etapas Totales",
-      "STOCK": "299"
+      "STOCK": "300"
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
@@ -1256,15 +1256,15 @@
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "297"
+      "STOCK": "298"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.00668896321070234"
+      "STOCK": "0.00666666666666667"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "#¡DIV/0!"
+      "STOCK": "0"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
