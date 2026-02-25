@@ -102,7 +102,7 @@
       "TPNPozo2": "5994",
       "TPNPozo3": "5846",
       "TPNPozo4": "5982",
-      "TPNPozo5": "",
+      "TPNPozo5": "5959",
       "TPNPozo6": ""
     },
     {
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-02-25T23:18:48.7929599Z",
+  "lastUpdate": "2026-02-25T23:19:54.5296879Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46179.9176525298"
+      "STOCK": "46179.9182233631"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
