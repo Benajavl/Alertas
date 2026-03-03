@@ -191,24 +191,24 @@
     },
     {
       "FechaFracPozo1": "46084",
-      "FechaFracPozo2": "FRACTURANDO",
+      "FechaFracPozo2": "46084",
       "FechaFracPozo3": "46084",
       "FechaFracPozo4": "46082",
-      "FechaFracPozo5": "FT2",
-      "FechaFracPozo6": "",
+      "FechaFracPozo5": "FT1",
+      "FechaFracPozo6": "FT2",
       "Fila": "#08",
       "SecuenciaPozo1": "46084",
       "SecuenciaPozo2": "46084.1194444444",
       "SecuenciaPozo3": "46084.2083333333",
       "SecuenciaPozo4": "46082.2847222222",
       "SecuenciaPozo5": "46084.4236111111",
-      "SecuenciaPozo6": "",
+      "SecuenciaPozo6": "46084.5451388889",
       "TPNPozo1": "5674",
       "TPNPozo2": "5682",
       "TPNPozo3": "5548",
       "TPNPozo4": "5688",
       "TPNPozo5": "5659",
-      "TPNPozo6": "WL"
+      "TPNPozo6": "5743"
     },
     {
       "FechaFracPozo1": "",
@@ -224,7 +224,7 @@
       "SecuenciaPozo4": "46083.4409722222",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
-      "TPNPozo1": "",
+      "TPNPozo1": "WL",
       "TPNPozo2": "",
       "TPNPozo3": "",
       "TPNPozo4": "5628",
@@ -235,7 +235,7 @@
       "FechaFracPozo1": "",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
-      "FechaFracPozo4": "FT1",
+      "FechaFracPozo4": "FRACTURANDO",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#10",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-03-03T13:16:22.8030229Z",
+  "lastUpdate": "2026-03-03T17:00:59.0972566Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "46"
+      "STOCK": "47"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "254"
+      "STOCK": "253"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.153333333333333"
+      "STOCK": "0.156666666666667"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "3"
+      "STOCK": "4"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46135.2262170139"
+      "STOCK": "46135.1840106481"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
