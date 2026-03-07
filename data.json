@@ -276,23 +276,23 @@
     {
       "FechaFracPozo1": "46088",
       "FechaFracPozo2": "46088",
-      "FechaFracPozo3": "FRACTURANDO",
+      "FechaFracPozo3": "46088",
       "FechaFracPozo4": "46087",
-      "FechaFracPozo5": "FT2",
-      "FechaFracPozo6": "WL",
+      "FechaFracPozo5": "FT1",
+      "FechaFracPozo6": "FT2",
       "Fila": "#12",
       "SecuenciaPozo1": "46088.0013888889",
       "SecuenciaPozo2": "46088.1319444444",
       "SecuenciaPozo3": "46088.2083333333",
       "SecuenciaPozo4": "46086.8819444444",
       "SecuenciaPozo5": "46088.4201388889",
-      "SecuenciaPozo6": "",
+      "SecuenciaPozo6": "46087.5486111111",
       "TPNPozo1": "5434",
       "TPNPozo2": "5442",
       "TPNPozo3": "5308",
       "TPNPozo4": "5448",
       "TPNPozo5": "5419",
-      "TPNPozo6": ""
+      "TPNPozo6": "5503"
     },
     {
       "FechaFracPozo1": "",
@@ -319,7 +319,7 @@
       "FechaFracPozo1": "",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
-      "FechaFracPozo4": "FT1",
+      "FechaFracPozo4": "FRACTURAR",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#14",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-03-07T16:11:52.7288675Z",
+  "lastUpdate": "2026-03-07T16:40:41.4206932Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "70"
+      "STOCK": "71"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "230"
+      "STOCK": "229"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.233333333333333"
+      "STOCK": "0.236666666666667"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "4"
+      "STOCK": "5"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46128.2050829462"
+      "STOCK": "46128.0526762133"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
