@@ -299,8 +299,8 @@
       "FechaFracPozo2": "46089",
       "FechaFracPozo3": "46089",
       "FechaFracPozo4": "46087",
-      "FechaFracPozo5": "FT1",
-      "FechaFracPozo6": "FT2",
+      "FechaFracPozo5": "FRACTURAR",
+      "FechaFracPozo6": "FT1",
       "Fila": "#13",
       "SecuenciaPozo1": "46088.6895833333",
       "SecuenciaPozo2": "46088.8236111111",
@@ -316,14 +316,14 @@
       "TPNPozo6": "5443"
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "FT2",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "46088",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#14",
-      "SecuenciaPozo1": "",
+      "SecuenciaPozo1": "46089.4097222222",
       "SecuenciaPozo2": "",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "46088.2868055556",
@@ -340,7 +340,7 @@
       "FechaFracPozo1": "",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
-      "FechaFracPozo4": "FRACTURANDO",
+      "FechaFracPozo4": "46089",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#15",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-03-08T15:21:45.6278527Z",
+  "lastUpdate": "2026-03-08T15:22:17.9768560Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "77"
+      "STOCK": "78"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "223"
+      "STOCK": "222"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.256666666666667"
+      "STOCK": "0.26"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "3"
+      "STOCK": "4"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46125.4824727225"
+      "STOCK": "46125.3218488351"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
