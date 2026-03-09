@@ -317,7 +317,7 @@
     },
     {
       "FechaFracPozo1": "Fractrando",
-      "FechaFracPozo2": "FT2",
+      "FechaFracPozo2": "FT1",
       "FechaFracPozo3": "WL",
       "FechaFracPozo4": "46088",
       "FechaFracPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-03-09T10:00:17.6411626Z",
+  "lastUpdate": "2026-03-09T10:00:50.0520989Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46129.5771522487"
+      "STOCK": "46129.5777196098"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
@@ -1292,7 +1292,7 @@
     },
     {
       "ITEM": "Bombas en Locacion",
-      "STOCK": "23"
+      "STOCK": "25"
     },
     {
       "ITEM": "",
