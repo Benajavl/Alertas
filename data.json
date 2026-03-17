@@ -529,7 +529,7 @@
       "FechaFracPozo1": "",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
-      "FechaFracPozo4": "FRACTURANDO",
+      "FechaFracPozo4": "Areno",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#24",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-03-16T23:29:55.6726237Z",
+  "lastUpdate": "2026-03-17T03:37:51.4619358Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1264,27 +1264,27 @@
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "5.9565174228125"
+      "STOCK": "5.95849521462999"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "8"
-    },
-    {
-      "ITEM": "Etapas Realizadas Hoy",
       "STOCK": "6"
     },
     {
+      "ITEM": "Etapas Realizadas Hoy",
+      "STOCK": "0"
+    },
+    {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "6.6"
+      "STOCK": "6.2"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46123.4595978746"
+      "STOCK": "46125.2843492384"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "125"
+      "STOCK": "131"
     },
     {
       "ITEM": "",
