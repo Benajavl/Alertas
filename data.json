@@ -3,17 +3,17 @@
     {
       "FechaFracPozo1": "LCa-3034 OMA 48 ET",
       "FechaFracPozo2": "LCa-3035 CO 49 ET",
-      "FechaFracPozo3": "LCa-3036 OIB 49 ET",
+      "FechaFracPozo3": "LCa-3036 OIB 48 ET",
       "FechaFracPozo4": "LCa-3037 OMA 50 ET",
-      "FechaFracPozo5": "LCa-3038 OIB 51 ET",
-      "FechaFracPozo6": "LCa-3039 51 CO",
+      "FechaFracPozo5": "LCa-3038 OIB 50 ET",
+      "FechaFracPozo6": "LCa-3039 50 CO",
       "Fila": "",
       "SecuenciaPozo1": "ET 48",
       "SecuenciaPozo2": "ET 49",
-      "SecuenciaPozo3": "ET 49",
+      "SecuenciaPozo3": "ET 48",
       "SecuenciaPozo4": "ET 50",
-      "SecuenciaPozo5": "ET 51",
-      "SecuenciaPozo6": "ET 51",
+      "SecuenciaPozo5": "ET 50",
+      "SecuenciaPozo6": "ET 50",
       "TPNPozo1": "POZO #1",
       "TPNPozo2": "POZO #2",
       "TPNPozo3": "POZO #3",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-03-24T21:06:31.4253967Z",
+  "lastUpdate": "2026-03-24T21:07:04.8898578Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1248,7 +1248,7 @@
     },
     {
       "ITEM": "Etapas Totales",
-      "STOCK": "300"
+      "STOCK": "295"
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
@@ -1256,11 +1256,11 @@
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "104"
+      "STOCK": "99"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.653333333333333"
+      "STOCK": "0.664406779661017"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46118.1351000661"
+      "STOCK": "46117.5404345403"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
