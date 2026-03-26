@@ -762,7 +762,7 @@
       "FechaFracPozo3": "46107",
       "FechaFracPozo4": "46105",
       "FechaFracPozo5": "46107",
-      "FechaFracPozo6": "FT1",
+      "FechaFracPozo6": "46106",
       "Fila": "#35",
       "SecuenciaPozo1": "46106.6333333333",
       "SecuenciaPozo2": "46106.7104166667",
@@ -778,16 +778,16 @@
       "TPNPozo6": "4115"
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "Fracturando",
       "FechaFracPozo2": "",
-      "FechaFracPozo3": "Wl",
+      "FechaFracPozo3": "F2",
       "FechaFracPozo4": "46106",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#36",
       "SecuenciaPozo1": "46107.375",
       "SecuenciaPozo2": "",
-      "SecuenciaPozo3": "",
+      "SecuenciaPozo3": "46106.6527777778",
       "SecuenciaPozo4": "46106.2729166667",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-03-26T19:04:03.0581626Z",
+  "lastUpdate": "2026-03-26T19:04:29.0041612Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,23 +1252,23 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "210"
+      "STOCK": "211"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "85"
+      "STOCK": "84"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.711864406779661"
+      "STOCK": "0.715254237288136"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "6.68056209238144"
+      "STOCK": "6.71283533920454"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "8"
+      "STOCK": "9"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
@@ -1276,15 +1276,15 @@
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "8.4"
+      "STOCK": "8.6"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46117.7884832672"
+      "STOCK": "46117.4369993836"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "207"
+      "STOCK": "208"
     },
     {
       "ITEM": "",
