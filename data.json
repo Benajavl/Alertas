@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-03-28T21:27:21.9455235Z",
+  "lastUpdate": "2026-03-28T21:35:09.3306233Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46118.742875641"
+      "STOCK": "46118.7487661503"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
