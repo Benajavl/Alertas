@@ -1053,20 +1053,20 @@
     {
       "FechaFracPozo1": "FIN",
       "FechaFracPozo2": "",
-      "FechaFracPozo3": "",
+      "FechaFracPozo3": "FIN",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#49",
       "SecuenciaPozo1": "FIN",
-      "SecuenciaPozo2": "FIN",
-      "SecuenciaPozo3": "",
+      "SecuenciaPozo2": "",
+      "SecuenciaPozo3": "FIN",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
       "TPNPozo1": "FIN",
       "TPNPozo2": "",
-      "TPNPozo3": "",
+      "TPNPozo3": "FIN",
       "TPNPozo4": "",
       "TPNPozo5": "",
       "TPNPozo6": ""
@@ -1074,7 +1074,7 @@
     {
       "FechaFracPozo1": "FIN",
       "FechaFracPozo2": "FIN",
-      "FechaFracPozo3": "",
+      "FechaFracPozo3": "FIN",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
@@ -1087,7 +1087,7 @@
       "SecuenciaPozo6": "",
       "TPNPozo1": "FIN",
       "TPNPozo2": "FIN",
-      "TPNPozo3": "",
+      "TPNPozo3": "FIN",
       "TPNPozo4": "",
       "TPNPozo5": "",
       "TPNPozo6": ""
@@ -1096,20 +1096,20 @@
       "FechaFracPozo1": "",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
-      "FechaFracPozo4": "",
+      "FechaFracPozo4": "FIN",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#51",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "",
       "SecuenciaPozo3": "",
-      "SecuenciaPozo4": "",
+      "SecuenciaPozo4": "FIN",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
       "TPNPozo1": "",
       "TPNPozo2": "",
       "TPNPozo3": "",
-      "TPNPozo4": "",
+      "TPNPozo4": "FIN",
       "TPNPozo5": "",
       "TPNPozo6": ""
     },
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-04-01T14:06:16.8581764Z",
+  "lastUpdate": "2026-04-01T14:07:35.1369309Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46117.974835747"
+      "STOCK": "46117.9754459321"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
