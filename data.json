@@ -909,7 +909,7 @@
       "FechaFracPozo3": "46112",
       "FechaFracPozo4": "46111",
       "FechaFracPozo5": "46112",
-      "FechaFracPozo6": "FRACTURANDO",
+      "FechaFracPozo6": "46112",
       "Fila": "#42",
       "SecuenciaPozo1": "46112.23125",
       "SecuenciaPozo2": "46112.3125",
@@ -967,7 +967,7 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "QUE HACEMOS GUILLE GUILLE",
+      "FechaFracPozo1": "",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-04-01T02:50:29.2141134Z",
+  "lastUpdate": "2026-04-01T03:00:37.9537532Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,39 +1252,39 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "253"
+      "STOCK": "254"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "42"
+      "STOCK": "41"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.857627118644068"
+      "STOCK": "0.861016949152542"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "6.78052451803329"
+      "STOCK": "6.86757167802562"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "9"
+      "STOCK": "10"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "9"
+      "STOCK": "0"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "7.4"
+      "STOCK": "8.2"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46118.6674534535"
+      "STOCK": "46118.0004334491"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "244"
+      "STOCK": "254"
     },
     {
       "ITEM": "",
