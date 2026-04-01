@@ -967,7 +967,7 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "QUE HACEMOS GUILLE GUILLE",
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-04-01T02:47:52.6444246Z",
+  "lastUpdate": "2026-04-01T02:48:25.6135530Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46118.6661208146"
+      "STOCK": "46118.6674534535"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
