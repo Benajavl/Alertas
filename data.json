@@ -967,7 +967,7 @@
       "TPNPozo6": ""
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "Illusion",
       "FechaFracPozo2": "BUBBA",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "46113",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-04-02T01:24:31.6526164Z",
+  "lastUpdate": "2026-04-02T01:25:02.5830179Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46117.8361312698"
+      "STOCK": "46117.8362915707"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
