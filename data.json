@@ -951,7 +951,7 @@
       "FechaFracPozo3": "46113",
       "FechaFracPozo4": "46112",
       "FechaFracPozo5": "FRACTURANDO",
-      "FechaFracPozo6": "",
+      "FechaFracPozo6": "FT1",
       "Fila": "#44",
       "SecuenciaPozo1": "46113.4465277778",
       "SecuenciaPozo2": "46113.5416666667",
@@ -967,7 +967,7 @@
       "TPNPozo6": "3565"
     },
     {
-      "FechaFracPozo1": "Illusion",
+      "FechaFracPozo1": "WL",
       "FechaFracPozo2": "BUBBA",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "46113",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-04-02T11:40:46.5101762Z",
+  "lastUpdate": "2026-04-02T11:41:53.2670649Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46117.8842509996"
+      "STOCK": "46117.884789194"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
