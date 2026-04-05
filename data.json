@@ -1097,7 +1097,7 @@
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
-      "FechaFracPozo5": "p",
+      "FechaFracPozo5": "Pba Integr. Illusion",
       "FechaFracPozo6": "",
       "Fila": "#51",
       "SecuenciaPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-04-05T18:56:04.6473927Z",
+  "lastUpdate": "2026-04-05T18:57:14.8138821Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46117.8964384636"
+      "STOCK": "46117.8968928618"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
