@@ -4,7 +4,7 @@
       "FechaFracPozo1": "LCa-3056 OMA 45 ET",
       "FechaFracPozo2": "LCa-3057 CO 45 ET",
       "FechaFracPozo3": "LCa-3058 OIB 45 ET",
-      "FechaFracPozo4": "LCa-3037 OMA 50 ET",
+      "FechaFracPozo4": "LCa-3059 OMA 45 ET",
       "FechaFracPozo5": "LCa-3038 OIB 50 ET",
       "FechaFracPozo6": "LCa-3039 50 CO",
       "Fila": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-05-16T17:24:34.0130042Z",
+  "lastUpdate": "2026-05-16T17:26:45.7945345Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
