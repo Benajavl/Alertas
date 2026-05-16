@@ -8,12 +8,12 @@
       "FechaFracPozo5": "LCa-3060 OIB 45 ET",
       "FechaFracPozo6": "LCa-3061 45 CO",
       "Fila": "",
-      "SecuenciaPozo1": "ET 45",
-      "SecuenciaPozo2": "ET 45",
-      "SecuenciaPozo3": "ET 45",
-      "SecuenciaPozo4": "ET 45",
-      "SecuenciaPozo5": "ET 45",
-      "SecuenciaPozo6": "ET 45",
+      "SecuenciaPozo1": "ET 43",
+      "SecuenciaPozo2": "ET 43",
+      "SecuenciaPozo3": "ET 42",
+      "SecuenciaPozo4": "ET 43",
+      "SecuenciaPozo5": "ET 443",
+      "SecuenciaPozo6": "ET 44",
       "TPNPozo1": "POZO #1",
       "TPNPozo2": "POZO #2",
       "TPNPozo3": "POZO #3",
@@ -1240,11 +1240,11 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-05-16T17:31:10.4396319Z",
+  "lastUpdate": "2026-05-16T18:03:46.3224850Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
-      "STOCK": "46178"
+      "STOCK": "46173"
     },
     {
       "ITEM": "Etapas Totales",
