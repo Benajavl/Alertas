@@ -2,15 +2,15 @@
   "items": [
     {
       "FechaFracPozo1": "LCa-3056 OMA 45 ET",
-      "FechaFracPozo2": "LCa-3035 CO 49 ET",
+      "FechaFracPozo2": "LCa-3057 CO 45 ET",
       "FechaFracPozo3": "LCa-3036 OIB 48 ET",
       "FechaFracPozo4": "LCa-3037 OMA 50 ET",
       "FechaFracPozo5": "LCa-3038 OIB 50 ET",
       "FechaFracPozo6": "LCa-3039 50 CO",
       "Fila": "",
-      "SecuenciaPozo1": "ET 48",
-      "SecuenciaPozo2": "ET 49",
-      "SecuenciaPozo3": "ET 48",
+      "SecuenciaPozo1": "ET 45",
+      "SecuenciaPozo2": "ET 45",
+      "SecuenciaPozo3": "ET 45",
       "SecuenciaPozo4": "ET 50",
       "SecuenciaPozo5": "ET 50",
       "SecuenciaPozo6": "ET 50",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-05-16T17:16:23.0034742Z",
+  "lastUpdate": "2026-05-16T17:16:54.4596571Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
