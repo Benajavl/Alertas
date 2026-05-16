@@ -13,7 +13,7 @@
       "SecuenciaPozo3": "ET 45",
       "SecuenciaPozo4": "ET 45",
       "SecuenciaPozo5": "ET 45",
-      "SecuenciaPozo6": "ET 50",
+      "SecuenciaPozo6": "ET 45",
       "TPNPozo1": "POZO #1",
       "TPNPozo2": "POZO #2",
       "TPNPozo3": "POZO #3",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-05-16T17:27:18.6285872Z",
+  "lastUpdate": "2026-05-16T17:27:52.3486661Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1248,7 +1248,7 @@
     },
     {
       "ITEM": "Etapas Totales",
-      "STOCK": "295"
+      "STOCK": "270"
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
@@ -1256,7 +1256,7 @@
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "295"
+      "STOCK": "270"
     },
     {
       "ITEM": "Avance Fractura",
@@ -1292,7 +1292,7 @@
     },
     {
       "ITEM": "Bombas en Locacion",
-      "STOCK": "26"
+      "STOCK": ""
     },
     {
       "ITEM": "",
