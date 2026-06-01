@@ -47,7 +47,7 @@
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "FT1",
-      "FechaFracPozo5": "FRACTURANDO",
+      "FechaFracPozo5": "46174",
       "FechaFracPozo6": "46174",
       "Fila": "#01",
       "SecuenciaPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-01T10:22:07.9857735Z",
+  "lastUpdate": "2026-06-01T12:18:12.3154322Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "1"
+      "STOCK": "2"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "257"
+      "STOCK": "256"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.00387596899224806"
+      "STOCK": "0.00775193798449612"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,15 +1272,15 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "1"
+      "STOCK": "2"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "1"
+      "STOCK": "2"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46431.3062729167"
+      "STOCK": "46302.3876319444"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
