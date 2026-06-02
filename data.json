@@ -44,7 +44,7 @@
     },
     {
       "FechaFracPozo1": "",
-      "FechaFracPozo2": "",
+      "FechaFracPozo2": "FT2",
       "FechaFracPozo3": "FT1",
       "FechaFracPozo4": "46174",
       "FechaFracPozo5": "46174",
@@ -56,8 +56,8 @@
       "SecuenciaPozo4": "46174.1875",
       "SecuenciaPozo5": "46174.0805555556",
       "SecuenciaPozo6": "46173.9923611111",
-      "TPNPozo1": "",
-      "TPNPozo2": "",
+      "TPNPozo1": "WL",
+      "TPNPozo2": "5761",
       "TPNPozo3": "5602",
       "TPNPozo4": "5705",
       "TPNPozo5": "5640",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-02T15:40:51.5026530Z",
+  "lastUpdate": "2026-06-02T15:42:01.2721789Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46488.028221875"
+      "STOCK": "46488.0287619213"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
@@ -1292,7 +1292,7 @@
     },
     {
       "ITEM": "Bombas en Locacion",
-      "STOCK": "27"
+      "STOCK": "26"
     },
     {
       "ITEM": "",
