@@ -232,7 +232,7 @@
       "TPNPozo6": "5316"
     },
     {
-      "FechaFracPozo1": "ESPERA TRACTOR",
+      "FechaFracPozo1": "Pezcar BHA",
       "FechaFracPozo2": "46182",
       "FechaFracPozo3": "46182",
       "FechaFracPozo4": "46180",
@@ -321,14 +321,14 @@
       "FechaFracPozo3": "46184",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
-      "FechaFracPozo6": "wl",
+      "FechaFracPozo6": "46184",
       "Fila": "#14",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "46183.75",
       "SecuenciaPozo3": "46183.9048611111",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
-      "SecuenciaPozo6": "",
+      "SecuenciaPozo6": "46183.9895833333",
       "TPNPozo1": "",
       "TPNPozo2": "4981",
       "TPNPozo3": "4822",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-11T09:11:22.8848366Z",
+  "lastUpdate": "2026-06-11T09:11:55.7073302Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "75"
+      "STOCK": "76"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "183"
+      "STOCK": "182"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.290697674418605"
+      "STOCK": "0.294573643410853"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "1"
+      "STOCK": "2"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46209.674330787"
+      "STOCK": "46209.5360054398"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
