@@ -232,7 +232,7 @@
       "TPNPozo6": "5316"
     },
     {
-      "FechaFracPozo1": "Pezcar BHA",
+      "FechaFracPozo1": "Fractura ",
       "FechaFracPozo2": "46182",
       "FechaFracPozo3": "46182",
       "FechaFracPozo4": "46180",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-11T18:47:11.4818479Z",
+  "lastUpdate": "2026-06-12T23:07:42.4293464Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1264,27 +1264,27 @@
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "6.72727272727273"
+      "STOCK": "6.33333333333333"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "7"
-    },
-    {
-      "ITEM": "Etapas Realizadas Hoy",
       "STOCK": "2"
     },
     {
+      "ITEM": "Etapas Realizadas Hoy",
+      "STOCK": "0"
+    },
+    {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "7.2"
+      "STOCK": "5.8"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46209.9355438657"
+      "STOCK": "46217.2179902059"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "74"
+      "STOCK": "76"
     },
     {
       "ITEM": "",
