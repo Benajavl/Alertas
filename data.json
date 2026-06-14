@@ -274,7 +274,7 @@
       "TPNPozo6": "5196"
     },
     {
-      "FechaFracPozo1": "",
+      "FechaFracPozo1": "javi gei",
       "FechaFracPozo2": "46183",
       "FechaFracPozo3": "46183",
       "FechaFracPozo4": "46182",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-14T04:44:40.9436074Z",
+  "lastUpdate": "2026-06-14T05:23:08.1327050Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46231.0703277778"
+      "STOCK": "46231.0993950231"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
