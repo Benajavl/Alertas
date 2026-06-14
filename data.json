@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-14T04:26:03.0795091Z",
+  "lastUpdate": "2026-06-14T04:26:34.7749833Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46231.0593765046"
+      "STOCK": "46231.0599395833"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
@@ -1288,7 +1288,7 @@
     },
     {
       "ITEM": "Horas Bombeo",
-      "STOCK": "0"
+      "STOCK": "'https://pluspetrolnet.sharepoint.com/teams/AR-PR-PreCompletion-C8-C16-ParteOperaciones-OpenWells/Documentos compartidos/Parte Operaciones - Open Wells/[Pad B5 - Input Time Summary _rev1.0.xlsm]13.06.yyyy'!$Z$2"
     },
     {
       "ITEM": "Bombas en Locacion",
