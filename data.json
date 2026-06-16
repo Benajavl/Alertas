@@ -1240,11 +1240,11 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-16T12:34:04.0266290Z",
+  "lastUpdate": "2026-06-16T13:12:19.9500167Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
-      "STOCK": "46173"
+      "STOCK": "46173.5"
     },
     {
       "ITEM": "Etapas Totales",
@@ -1264,7 +1264,7 @@
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "6"
+      "STOCK": "6.19354838709677"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46226.214077883"
+      "STOCK": "46226.2433884154"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
