@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-16T03:27:59.8839738Z",
+  "lastUpdate": "2026-06-16T06:07:39.6007404Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46225.8356866793"
+      "STOCK": "46225.9484950126"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
@@ -1293,6 +1293,22 @@
     {
       "ITEM": "Bombas en Locacion",
       "STOCK": "27"
+    },
+    {
+      "ITEM": "",
+      "STOCK": ""
+    },
+    {
+      "ITEM": "",
+      "STOCK": ""
+    },
+    {
+      "ITEM": "",
+      "STOCK": ""
+    },
+    {
+      "ITEM": "",
+      "STOCK": ""
     },
     {
       "ITEM": "",
