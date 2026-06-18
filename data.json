@@ -431,7 +431,7 @@
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "46190.7083333333",
       "SecuenciaPozo3": "46190.7958333333",
-      "SecuenciaPozo4": "",
+      "SecuenciaPozo4": "46191.0909722222",
       "SecuenciaPozo5": "46190.4527777778",
       "SecuenciaPozo6": "46190.5458333333",
       "TPNPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-18T10:37:23.2391511Z",
+  "lastUpdate": "2026-06-18T10:38:34.1538217Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46213.1356638784"
+      "STOCK": "46213.1362330913"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
