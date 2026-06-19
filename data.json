@@ -489,7 +489,7 @@
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "46192",
-      "FechaFracPozo6": "46192",
+      "FechaFracPozo6": "Fracturando",
       "Fila": "#22",
       "SecuenciaPozo1": "con rodilla ",
       "SecuenciaPozo2": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-19T20:03:08.4872974Z",
+  "lastUpdate": "2026-06-19T20:05:11.9240029Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
