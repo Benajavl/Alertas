@@ -494,7 +494,7 @@
       "SecuenciaPozo1": "con rodilla ",
       "SecuenciaPozo2": "46192.7104166667",
       "SecuenciaPozo3": "46192.9215277778",
-      "SecuenciaPozo4": "",
+      "SecuenciaPozo4": "46192.0034722222",
       "SecuenciaPozo5": "46192.3611111111",
       "SecuenciaPozo6": "46192.4527777778",
       "TPNPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-20T03:28:05.2773507Z",
+  "lastUpdate": "2026-06-20T03:29:58.0069730Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46209.0194810185"
+      "STOCK": "46209.0204302083"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
