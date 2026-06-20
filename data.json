@@ -484,7 +484,7 @@
       "TPNPozo6": "4596"
     },
     {
-      "FechaFracPozo1": "slim",
+      "FechaFracPozo1": "WL",
       "FechaFracPozo2": "46192",
       "FechaFracPozo3": "46193",
       "FechaFracPozo4": "46193",
@@ -508,7 +508,7 @@
       "FechaFracPozo1": "",
       "FechaFracPozo2": "46193",
       "FechaFracPozo3": "46193",
-      "FechaFracPozo4": "Fracturando ",
+      "FechaFracPozo4": "46193",
       "FechaFracPozo5": "46193",
       "FechaFracPozo6": "46193",
       "Fila": "#23",
@@ -530,21 +530,21 @@
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
-      "FechaFracPozo5": "FT2",
-      "FechaFracPozo6": "WL",
+      "FechaFracPozo5": "Fracturando",
+      "FechaFracPozo6": "F2",
       "Fila": "#24",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "46193.7083333333",
-      "SecuenciaPozo6": "",
+      "SecuenciaPozo6": "46193.7777777778",
       "TPNPozo1": "",
       "TPNPozo2": "",
       "TPNPozo3": "",
       "TPNPozo4": "",
       "TPNPozo5": "4260",
-      "TPNPozo6": ""
+      "TPNPozo6": "4416"
     },
     {
       "FechaFracPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-20T21:54:26.1890568Z",
+  "lastUpdate": "2026-06-20T21:54:51.7128721Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "135"
+      "STOCK": "136"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "121"
+      "STOCK": "120"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.52734375"
+      "STOCK": "0.53125"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "7"
+      "STOCK": "8"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46208.9127515046"
+      "STOCK": "46208.7880309028"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
