@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-22T13:04:16.3388343Z",
+  "lastUpdate": "2026-06-22T13:04:50.8606505Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46206.5898168169"
+      "STOCK": "46206.5899882289"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
@@ -1288,7 +1288,7 @@
     },
     {
       "ITEM": "Horas Bombeo Hoy",
-      "STOCK": "5.32"
+      "STOCK": "7.22"
     },
     {
       "ITEM": "Horas Bombeo Ayer",
