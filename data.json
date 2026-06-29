@@ -825,7 +825,7 @@
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "46201",
-      "FechaFracPozo6": "FT1",
+      "FechaFracPozo6": "FRACTURANDO ",
       "Fila": "#38",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "46201.875",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-29T02:14:15.1129641Z",
+  "lastUpdate": "2026-06-29T03:37:29.2529598Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1264,27 +1264,27 @@
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "7.8299188248944"
+      "STOCK": "7.90756615728731"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "11"
-    },
-    {
-      "ITEM": "Etapas Realizadas Hoy",
       "STOCK": "10"
     },
     {
+      "ITEM": "Etapas Realizadas Hoy",
+      "STOCK": "0"
+    },
+    {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "10.6"
+      "STOCK": "10.4"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46205.2697525332"
+      "STOCK": "46205.3914106571"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "211"
+      "STOCK": "221"
     },
     {
       "ITEM": "Horas Bombeo Hoy",
