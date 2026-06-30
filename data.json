@@ -833,7 +833,7 @@
       "SecuenciaPozo4": "46202.1145833333",
       "SecuenciaPozo5": "46201.5020833333",
       "SecuenciaPozo6": "46201.7138888889",
-      "TPNPozo1": "",
+      "TPNPozo1": "3361",
       "TPNPozo2": "3523",
       "TPNPozo3": "3382",
       "TPNPozo4": "3485",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-30T02:27:34.9205014Z",
+  "lastUpdate": "2026-06-30T04:07:21.4835700Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1264,35 +1264,35 @@
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "7.90756615728731"
+      "STOCK": "7.94530406621153"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "10"
-    },
-    {
-      "ITEM": "Etapas Realizadas Hoy",
       "STOCK": "9"
     },
     {
+      "ITEM": "Etapas Realizadas Hoy",
+      "STOCK": "0"
+    },
+    {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "10.4"
+      "STOCK": "10.2"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46205.4755429398"
+      "STOCK": "46205.5957562977"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "221"
+      "STOCK": "230"
     },
     {
       "ITEM": "Horas Bombeo Hoy",
-      "STOCK": "5.35"
+      "STOCK": "0"
     },
     {
       "ITEM": "Horas Bombeo Ayer",
-      "STOCK": "20.23"
+      "STOCK": "5.35"
     },
     {
       "ITEM": "",
