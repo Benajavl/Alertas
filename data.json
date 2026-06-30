@@ -820,7 +820,7 @@
       "TPNPozo6": "3636"
     },
     {
-      "FechaFracPozo1": "WL",
+      "FechaFracPozo1": "FT3",
       "FechaFracPozo2": "46202",
       "FechaFracPozo3": "46202",
       "FechaFracPozo4": "46202",
@@ -843,8 +843,8 @@
     {
       "FechaFracPozo1": "",
       "FechaFracPozo2": "46202",
-      "FechaFracPozo3": "FRACTURANDO",
-      "FechaFracPozo4": "FT1",
+      "FechaFracPozo3": "46202",
+      "FechaFracPozo4": "FRACTURANDO",
       "FechaFracPozo5": "46202",
       "FechaFracPozo6": "46202",
       "Fila": "#39",
@@ -866,8 +866,8 @@
       "FechaFracPozo2": "",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
-      "FechaFracPozo5": "FT2",
-      "FechaFracPozo6": "FT3",
+      "FechaFracPozo5": "FT1",
+      "FechaFracPozo6": "FT2",
       "Fila": "#40",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-06-30T04:07:21.4835700Z",
+  "lastUpdate": "2026-06-30T04:07:49.9989913Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,23 +1252,23 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "230"
+      "STOCK": "231"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "26"
+      "STOCK": "25"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.8984375"
+      "STOCK": "0.90234375"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "7.94530406621153"
+      "STOCK": "7.97984886649941"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "9"
+      "STOCK": "10"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
@@ -1276,15 +1276,15 @@
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "10.2"
+      "STOCK": "10.4"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46205.5957562977"
+      "STOCK": "46205.4507593483"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "230"
+      "STOCK": "231"
     },
     {
       "ITEM": "Horas Bombeo Hoy",
