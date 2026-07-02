@@ -985,7 +985,7 @@
       "TPNPozo3": "",
       "TPNPozo4": "",
       "TPNPozo5": "",
-      "TPNPozo6": "WELLBOSS"
+      "TPNPozo6": "3166"
     },
     {
       "FechaFracPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-07-02T00:19:09.2827520Z",
+  "lastUpdate": "2026-07-02T00:19:44.0298480Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46205.3784915645"
+      "STOCK": "46205.3786389025"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
