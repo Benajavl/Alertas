@@ -972,7 +972,7 @@
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
-      "FechaFracPozo6": "WL",
+      "FechaFracPozo6": "WELLBOSS",
       "Fila": "#45",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-07-01T23:05:19.2965149Z",
+  "lastUpdate": "2026-07-02T00:19:09.2827520Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46205.3268340414"
+      "STOCK": "46205.3784915645"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
