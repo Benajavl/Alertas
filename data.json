@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "FechaFracPozo1": "LCa-3373 OMA ",
+      "FechaFracPozo1": "LCa-3373 OMA FP1",
       "FechaFracPozo2": "LCa-3374OIB",
       "FechaFracPozo3": "LCa-3375 CO",
       "FechaFracPozo4": "LCa-3376 OMA",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-06T11:46:14.7642346Z",
+  "lastUpdate": "2026-11-06T11:48:25.7986221Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
