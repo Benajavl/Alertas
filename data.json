@@ -149,7 +149,7 @@
     },
     {
       "FechaFracPozo1": "Hidra Meel FP2",
-      "FechaFracPozo2": "F2",
+      "FechaFracPozo2": "F1",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "46338",
       "FechaFracPozo5": "46338",
@@ -160,7 +160,7 @@
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "46338.0277777778",
       "SecuenciaPozo5": "11/11/1026  19:20",
-      "SecuenciaPozo6": "",
+      "SecuenciaPozo6": "WL",
       "TPNPozo1": "6193.7",
       "TPNPozo2": "6134",
       "TPNPozo3": "6322.4",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-12T09:51:59.3794372Z",
+  "lastUpdate": "2026-11-12T09:52:32.6031580Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46416.6192201389"
+      "STOCK": "46416.6197893519"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
