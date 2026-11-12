@@ -151,7 +151,7 @@
       "FechaFracPozo1": "Hidra Meel FP2",
       "FechaFracPozo2": "F1",
       "FechaFracPozo3": "",
-      "FechaFracPozo4": "46338",
+      "FechaFracPozo4": "Terminar",
       "FechaFracPozo5": "46338",
       "FechaFracPozo6": "",
       "Fila": "#06",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-12T09:53:52.5844380Z",
+  "lastUpdate": "2026-11-12T11:07:57.5819967Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,15 +1252,15 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "32"
+      "STOCK": "31"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "376"
+      "STOCK": "377"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.0784313725490196"
+      "STOCK": "0.0759803921568627"
     },
     {
       "ITEM": "Etapas/días calendario",
@@ -1272,7 +1272,7 @@
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
-      "STOCK": "2"
+      "STOCK": "1"
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46416.6197893519"
+      "STOCK": "46416.8805196759"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
