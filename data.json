@@ -212,7 +212,7 @@
     },
     {
       "FechaFracPozo1": "",
-      "FechaFracPozo2": "bombeo limpieza",
+      "FechaFracPozo2": "Fracturando",
       "FechaFracPozo3": "FT2",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-14T09:46:03.9743408Z",
+  "lastUpdate": "2026-11-14T10:51:19.7979742Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46416.1129415509"
+      "STOCK": "46416.160640162"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
