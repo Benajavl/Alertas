@@ -172,7 +172,7 @@
       "FechaFracPozo1": "46339",
       "FechaFracPozo2": "46339",
       "FechaFracPozo3": "46338",
-      "FechaFracPozo4": "FT1",
+      "FechaFracPozo4": "B.beo de Efriamiento",
       "FechaFracPozo5": "Fracturando",
       "FechaFracPozo6": "46339",
       "Fila": "#07",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-14T14:16:20.5123527Z",
+  "lastUpdate": "2026-11-14T14:16:53.2965713Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
