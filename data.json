@@ -237,7 +237,7 @@
       "FechaFracPozo3": "46341",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
-      "FechaFracPozo6": "WL",
+      "FechaFracPozo6": "ASIENTO PREMAT",
       "Fila": "#10",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "46340.6666666667",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-16T09:54:36.8175286Z",
+  "lastUpdate": "2026-11-16T09:55:10.8363647Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46407.658059375"
+      "STOCK": "46407.6586266204"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
