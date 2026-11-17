@@ -275,7 +275,7 @@
     },
     {
       "FechaFracPozo1": "",
-      "FechaFracPozo2": "",
+      "FechaFracPozo2": "46342",
       "FechaFracPozo3": "Fracturando",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
@@ -296,20 +296,20 @@
     },
     {
       "FechaFracPozo1": "",
-      "FechaFracPozo2": "",
+      "FechaFracPozo2": "FT",
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
       "FechaFracPozo6": "",
       "Fila": "#13",
       "SecuenciaPozo1": "",
-      "SecuenciaPozo2": "",
+      "SecuenciaPozo2": "46342.875",
       "SecuenciaPozo3": "",
       "SecuenciaPozo4": "",
       "SecuenciaPozo5": "",
       "SecuenciaPozo6": "",
       "TPNPozo1": "",
-      "TPNPozo2": "",
+      "TPNPozo2": "5681",
       "TPNPozo3": "",
       "TPNPozo4": "",
       "TPNPozo5": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-17T10:25:20.1650472Z",
+  "lastUpdate": "2026-11-17T10:25:55.1780829Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1252,23 +1252,23 @@
     },
     {
       "ITEM": "Etapa Acumuladas Realizadas",
-      "STOCK": "57"
+      "STOCK": "58"
     },
     {
       "ITEM": "Etapas Faltantes",
-      "STOCK": "351"
+      "STOCK": "350"
     },
     {
       "ITEM": "Avance Fractura",
-      "STOCK": "0.139705882352941"
+      "STOCK": "0.142156862745098"
     },
     {
       "ITEM": "Etapas/días calendario",
-      "STOCK": "4.25316455696281"
+      "STOCK": "4.32911392405143"
     },
     {
       "ITEM": "Etapas Realizadas Ayer",
-      "STOCK": "3"
+      "STOCK": "4"
     },
     {
       "ITEM": "Etapas Realizadas Hoy",
@@ -1276,15 +1276,15 @@
     },
     {
       "ITEM": "Vel E/d (last 5 days)",
-      "STOCK": "5"
+      "STOCK": "5.2"
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46413.5090587963"
+      "STOCK": "46410.6172876781"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
-      "STOCK": "56"
+      "STOCK": "57"
     },
     {
       "ITEM": "",
