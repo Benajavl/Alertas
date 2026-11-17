@@ -257,7 +257,7 @@
       "FechaFracPozo2": "46341",
       "FechaFracPozo3": "46342",
       "FechaFracPozo4": "",
-      "FechaFracPozo5": "B.beo erocivo",
+      "FechaFracPozo5": "B.beo erosivo",
       "FechaFracPozo6": "",
       "Fila": "#11",
       "SecuenciaPozo1": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-17T23:22:28.0503520Z",
+  "lastUpdate": "2026-11-17T23:22:59.6852122Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46408.108190162"
+      "STOCK": "46408.1083741898"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
