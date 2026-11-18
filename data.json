@@ -8,9 +8,9 @@
       "FechaFracPozo5": "LCa-3377 CO FP1",
       "FechaFracPozo6": "LCa-3378 OIB FP2",
       "Fila": "",
-      "SecuenciaPozo1": "67",
-      "SecuenciaPozo2": "64",
-      "SecuenciaPozo3": "74",
+      "SecuenciaPozo1": "50",
+      "SecuenciaPozo2": "55",
+      "SecuenciaPozo3": "68",
       "SecuenciaPozo4": "68",
       "SecuenciaPozo5": "71",
       "SecuenciaPozo6": "64",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-18T23:09:01.6462418Z",
+  "lastUpdate": "2026-11-18T23:10:12.8283386Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46401.0392234954"
+      "STOCK": "46401.0403416667"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
