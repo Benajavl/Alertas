@@ -277,7 +277,7 @@
       "FechaFracPozo1": "46346",
       "FechaFracPozo2": "46342",
       "FechaFracPozo3": "46343",
-      "FechaFracPozo4": "FRAC 1",
+      "FechaFracPozo4": "FR1",
       "FechaFracPozo5": "46344",
       "FechaFracPozo6": "46346",
       "Fila": "#12",
@@ -295,7 +295,7 @@
       "TPNPozo6": "5515"
     },
     {
-      "FechaFracPozo1": "Recupero bola",
+      "FechaFracPozo1": "Hidrameel",
       "FechaFracPozo2": "46343",
       "FechaFracPozo3": "46343",
       "FechaFracPozo4": "",
@@ -316,7 +316,7 @@
       "TPNPozo6": "5450"
     },
     {
-      "FechaFracPozo1": "EROSIONAR TPN",
+      "FechaFracPozo1": "",
       "FechaFracPozo2": "46344",
       "FechaFracPozo3": "46344",
       "FechaFracPozo4": "",
@@ -594,7 +594,7 @@
       "FechaFracPozo3": "",
       "FechaFracPozo4": "",
       "FechaFracPozo5": "",
-      "FechaFracPozo6": "",
+      "FechaFracPozo6": "21-11-202",
       "Fila": "#27",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-21T12:18:06.2896179Z",
+  "lastUpdate": "2026-11-21T12:57:17.4908932Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46391.5542335648"
+      "STOCK": "46391.581447338"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
