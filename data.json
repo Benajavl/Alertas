@@ -298,7 +298,7 @@
       "FechaFracPozo1": "SLIM AP",
       "FechaFracPozo2": "46343",
       "FechaFracPozo3": "46343",
-      "FechaFracPozo4": "",
+      "FechaFracPozo4": "WL",
       "FechaFracPozo5": "46345",
       "FechaFracPozo6": "46347",
       "Fila": "#13",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-21T16:44:58.5100478Z",
+  "lastUpdate": "2026-11-21T16:50:04.3878689Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46391.4038511574"
+      "STOCK": "46391.4097679398"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
