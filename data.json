@@ -405,7 +405,7 @@
       "FechaFracPozo3": "46347",
       "FechaFracPozo4": "46352",
       "FechaFracPozo5": "46350",
-      "FechaFracPozo6": "AP Erosionar TPN WL",
+      "FechaFracPozo6": "AP 4899",
       "Fila": "#18",
       "SecuenciaPozo1": "",
       "SecuenciaPozo2": "46347.9444444444",
@@ -1240,7 +1240,7 @@
       "TPNPozo6": ""
     }
   ],
-  "lastUpdate": "2026-11-27T22:25:28.9119702Z",
+  "lastUpdate": "2026-11-27T22:26:03.9106813Z",
   "stock": [
     {
       "ITEM": "Fecha inicio fractura",
@@ -1280,7 +1280,7 @@
     },
     {
       "ITEM": "Fecha Fin Frac",
-      "STOCK": "46391.4758421296"
+      "STOCK": "46391.4764141204"
     },
     {
       "ITEM": "ET Acumuladas día anterior",
